@@ -3,9 +3,15 @@ package com.example.udemy_android_template.ui.siginup
 import android.view.View
 import android.widget.Toast
 import com.example.udemy_android_template.data.entities.User
+import com.example.udemy_android_template.data.remote.auth.AuthResponse
+import com.example.udemy_android_template.data.remote.auth.AuthRetrofitInterface
 import com.example.udemy_android_template.data.remote.auth.AuthService
+import com.example.udemy_android_template.data.remote.auth.getRetrofit
 import com.example.udemy_android_template.databinding.ActivitySignupBinding
 import com.example.udemy_android_template.ui.BaseActivity
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class SignUpActivity: BaseActivity<ActivitySignupBinding>(ActivitySignupBinding::inflate), SignUpView, View.OnClickListener {
