@@ -34,13 +34,13 @@ class SignUpActivity: BaseActivity<ActivitySignupBinding>(ActivitySignupBinding:
         val email: String =
             binding.signUpIdEt.text.toString() + "@" + binding.signUpDirectInputEt.text.toString()
         val pwd: String = binding.signUpPasswordEt.text.toString()
-        val realName: String = binding.signUpRealNameEt.text.toString()
         val nickName: String = binding.signUpNickNameEt.text.toString()
-        val phoneNum: String = binding.signUpPhoneNumberEt.text.toString()
-        val dateOfBirth: String = binding.signUpDateOfBirthEt.text.toString()
         val recommander: String? = binding.signUpRecommanderEt.text.toString()
+//        val phoneNum: String = binding.signUpPhoneNumberEt.text.toString()
+//        val realName: String = binding.signUpRealNameEt.text.toString()
+//        val dateOfBirth: String = binding.signUpDateOfBirthEt.text.toString()
 
-        return User(email, pwd, nickName, realName, phoneNum, dateOfBirth, recommander)
+        return User(email, pwd, nickName, recommander)
     }
 
     private fun signUp() {
@@ -51,23 +51,8 @@ class SignUpActivity: BaseActivity<ActivitySignupBinding>(ActivitySignupBinding:
             return
         }
 
-        if (binding.signUpRealNameEt.text.toString().isEmpty()) {
-            Toast.makeText(this, "이름 형식이 잘못되었습니다.", Toast.LENGTH_SHORT).show()
-            return
-        }
-
         if (binding.signUpNickNameEt.text.toString().isEmpty()) {
             Toast.makeText(this, "닉네임을 입력해주세요.", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        if (binding.signUpPhoneNumberEt.text.toString().isEmpty()) {
-            Toast.makeText(this, "휴대폰 번호를 입력해주세요.", Toast.LENGTH_SHORT).show()
-            return
-        }
-
-        if (binding.signUpDateOfBirthEt.text.toString().isEmpty()) {
-            Toast.makeText(this, "생년월일을 입력해주세요.", Toast.LENGTH_SHORT).show()
             return
         }
 

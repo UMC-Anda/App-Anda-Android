@@ -40,7 +40,7 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::in
 
         val email = binding.loginIdEt.text.toString() + "@" + binding.loginDirectInputEt.text.toString()
         val password = binding.loginPasswordEt.text.toString()
-        val user = User(email, password, "", "", "", "", "")
+        val user = User(email, password, "", "")
 
         AuthService.login(this, user)
     }

@@ -21,17 +21,19 @@
     <string name="login_email_delimiter">\@</string>
     <string name="login_name_hint">이름</string>
     <string name="login_signup">회원가입</string>
+    <string name="login_find_id">아이디 비밀번호 찾기</string>
 
     <!-- 회원가입 -->
     <string name="signup">회원가입</string>
+    <string name="signup_info">가입을 통해 안다의 다양한 해택을 함께 누려보세요!</string>
     <string name="signup_id_hint">아이디(이메일)</string>
     <string name="signup_lastId_hint">anda.com</string>
     <string name="signup_password_hint">비밀번호</string>
-    <string name="signup_password_confirm_hint">비밀번호 확인</string>
+    <string name="signup_password_confirm_hint">비밀번호 재입력</string>
     <string name="signup_realName_hint">이름</string>
     <string name="signup_nickName_hint">닉네임</string>
     <string name="signup_phoneNumber_hint">휴대폰 번호</string>
     <string name="signup_dateOfBirth_hint">생년월일</string>
-    <string name="signup_recommander_hint">추천인(선택)</string>
+    <string name="signup_recommander_hint">추천인</string>
     <string name="signup_email_delimiter">\@</string>
 </resources>

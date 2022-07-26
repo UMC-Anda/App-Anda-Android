@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -16,6 +17,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/sign_up_info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="@string/signup_info"
+        android:textColor="@color/black"
+        android:textSize="9sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/sign_up_sign_up_tv" />
+
 
     <ImageView
         android:id="@+id/sign_up_back_iv"
@@ -36,12 +51,12 @@
     <EditText
         android:id="@+id/sign_up_id_et"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40sp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
         android:layout_marginEnd="5dp"
         android:autofillHints="@null"
-        android:background="@null"
+        android:background="@drawable/border_common"
         android:hint="@string/signup_id_hint"
         android:inputType="text"
         android:textSize="16sp"
@@ -75,18 +90,18 @@
     <EditText
         android:id="@+id/sign_up_direct_input_et"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40sp"
         android:layout_marginStart="5dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="@null"
-        android:background="@null"
+        android:background="@drawable/border_common"
         android:hint="@string/signup_lastId_hint"
         android:inputType="textWebEmailAddress"
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/sign_up_id_et"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sign_up_at_sign_tv"
-        app:layout_constraintTop_toTopOf="@+id/sign_up_at_sign_tv" />
+        app:layout_constraintTop_toTopOf="@+id/sign_up_id_et" />
 
     <View
         android:id="@+id/sign_up_address_underscore_view"
@@ -111,114 +126,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sign_up_id_underscore_view" />
 
-    <EditText
-        android:id="@+id/sign_up_nickName_et"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
-        android:autofillHints="@null"
-        android:background="@null"
-        android:hint="@string/signup_nickName_hint"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_email_error_tv" />
-
-    <View
-        android:id="@+id/sign_up_name_underscore_view"
-        android:layout_width="150dp"
-        android:layout_height="1px"
-        android:layout_marginTop="15dp"
-        android:background="#a8a8a8"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_password_et"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_nickName_et" />
-
-    <EditText
-        android:id="@+id/sign_up_realName_et"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
-        android:autofillHints="@null"
-        android:background="@null"
-        android:hint="@string/signup_realName_hint"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_name_underscore_view" />
-
-    <View
-        android:id="@+id/sign_up_realName_underscore_view"
-        android:layout_width="150dp"
-        android:layout_height="1px"
-        android:layout_marginTop="15dp"
-        android:background="#a8a8a8"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_password_et"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_realName_et" />
-
-    <EditText
-        android:id="@+id/sign_up_phoneNumber_et"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
-        android:autofillHints="@null"
-        android:background="@null"
-        android:hint="@string/signup_phoneNumber_hint"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_realName_underscore_view" />
-
-    <View
-        android:id="@+id/sign_up_phoneNumber_underscore_view"
-        android:layout_width="150dp"
-        android:layout_height="1px"
-        android:layout_marginTop="15dp"
-        android:background="#a8a8a8"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_password_et"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_phoneNumber_et" />
-
-    <EditText
-        android:id="@+id/sign_up_dateOfBirth_et"
-        android:layout_width="150dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="28dp"
-        android:autofillHints="@null"
-        android:background="@null"
-        android:hint="@string/signup_dateOfBirth_hint"
-        android:inputType="textPersonName"
-        android:textSize="16sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_phoneNumber_underscore_view" />
-
-    <View
-        android:id="@+id/sign_up_dateOfBirth_underscore_view"
-        android:layout_width="150dp"
-        android:layout_height="1px"
-        android:layout_marginTop="15dp"
-        android:background="#a8a8a8"
-        app:layout_constraintStart_toStartOf="@+id/sign_up_password_et"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_dateOfBirth_et" />
-
 
     <EditText
         android:id="@+id/sign_up_password_et"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40sp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="@null"
-        android:background="@null"
+        android:background="@drawable/border_common"
         android:hint="@string/signup_password_hint"
         android:inputType="textPassword"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_dateOfBirth_underscore_view" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_email_error_tv" />
 
     <View
         android:id="@+id/sign_up_password_underscore_view"
@@ -233,12 +156,12 @@
     <EditText
         android:id="@+id/sign_up_password_check_et"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40sp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="@null"
-        android:background="@null"
+        android:background="@drawable/border_common"
         android:hint="@string/signup_password_confirm_hint"
         android:inputType="textPassword"
         android:textSize="16sp"
@@ -257,20 +180,69 @@
         app:layout_constraintTop_toBottomOf="@+id/sign_up_password_check_et" />
 
     <EditText
-        android:id="@+id/sign_up_recommander_et"
+        android:id="@+id/sign_up_nickName_et"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="40sp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="28dp"
         android:layout_marginEnd="20dp"
         android:autofillHints="@null"
-        android:background="@null"
+        android:background="@drawable/border_common"
+        android:hint="@string/signup_nickName_hint"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_password_check_underscore_view" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/sign_up_nickName_checkButton"
+        android:layout_width="0dp"
+        android:layout_height="35sp"
+        android:textSize="13sp"
+        android:text="중복확인"
+        android:background="@drawable/border_nickname_checkbutton"
+        android:layout_marginEnd="1dp"
+        app:layout_constraintEnd_toEndOf="@+id/sign_up_nickName_et"
+        app:layout_constraintTop_toTopOf="@+id/sign_up_nickName_et"
+        app:layout_constraintBottom_toBottomOf="@+id/sign_up_nickName_et"/>
+
+    <View
+        android:id="@+id/sign_up_name_underscore_view"
+        android:layout_width="0dp"
+        android:layout_height="1px"
+        android:layout_marginTop="15dp"
+        android:background="#a8a8a8"
+        app:layout_constraintStart_toStartOf="@+id/sign_up_password_et"
+        app:layout_constraintEnd_toEndOf="@+id/sign_up_password_et"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_nickName_et" />
+
+
+    <TextView
+        android:id="@+id/sign_up_recommander_info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="선택)"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="35sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_name_underscore_view"/>
+
+    <EditText
+        android:id="@+id/sign_up_recommander_et"
+        android:layout_width="0dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:autofillHints="@null"
+        android:background="@drawable/border_common"
         android:hint="@string/signup_recommander_hint"
         android:inputType="textPassword"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sign_up_password_check_underscore_view" />
+        app:layout_constraintTop_toBottomOf="@+id/sign_up_recommander_info_tv" />
 
     <View
         android:id="@+id/sign_up_recommander_underscore_view"
@@ -309,4 +281,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
