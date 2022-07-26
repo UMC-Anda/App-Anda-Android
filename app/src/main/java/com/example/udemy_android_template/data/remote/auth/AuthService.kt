@@ -23,8 +23,12 @@ object AuthService {
                 val resp = response.body()!!
 
                 when(resp.code){
-                    1000 -> signUpView.onSignUpSuccess()
-                    else -> signUpView.onSignUpFailure(resp.code, resp.message)
+                    1000 -> signUpView.onSignUpSuccess() //조회 성공
+                    2001 -> signUpView.onSignUpFailure(resp.code, resp.message) //이메일 미입력
+                    2002 -> signUpView.onSignUpFailure(resp.code, resp.message) //이름 미입력
+                    2003 -> signUpView.onSignUpFailure(resp.code, resp.message) //비밀번호 미입력
+                    2004 -> signUpView.onSignUpFailure(resp.code, resp.message) //비밀번호 미입력
+                    else -> signUpView.onSignUpFailure(resp.code, resp.message) //이미 가입된 회원
                 }
             }
 
