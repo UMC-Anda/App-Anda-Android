@@ -8,7 +8,7 @@ android {
     compileSdk 31
 
     defaultConfig {
-        applicationId "com.example.udemy_android_template"
+        applicationId "com.example.anda"
         minSdk 23
         targetSdk 31
         versionCode 1

@@ -3,8 +3,8 @@ package com.example.anda.ui.login
 import android.view.View
 import android.widget.Toast
 import com.example.anda.data.entities.User
-import com.example.anda.data.remote.auth.Auth
 import com.example.anda.data.remote.auth.AuthService
+import com.example.anda.data.remote.auth.Result
 import com.example.anda.databinding.ActivityLoginBinding
 import com.example.anda.ui.BaseActivity
 import com.example.anda.ui.main.MainActivity
@@ -49,10 +49,13 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::in
         binding.loginLoadingPb.visibility = View.VISIBLE
     }
 
-    override fun onLoginSuccess(auth: Auth) {
+    override fun onLoginSuccess(code: Int, result: Result) {
         binding.loginLoadingPb.visibility = View.GONE
 
-        saveJwt(auth.jwt)
+        when(code){
+            1000-> saveJwt(result.jwt)
+        }
+        saveJwt(result.jwt)
         startActivityWithClear(MainActivity::class.java)
     }
 
