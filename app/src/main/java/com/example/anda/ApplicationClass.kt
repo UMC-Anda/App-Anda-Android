@@ -9,7 +9,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
-class ApplicationClass : Application() {
+class   ApplicationClass : Application() {
     companion object{
         const val X_ACCESS_TOKEN: String = "X-ACCESS-TOKEN"         // JWT Token Key
         const val TAG: String = "TEMPLATE-APP"                      // Log, SharedPreference
