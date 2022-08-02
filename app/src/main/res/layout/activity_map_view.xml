@@ -1,38 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
+    android:id="@+id/activity_map_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.main.map.FindOphthalmologyActivity">
+    tools:context=".ui.main.MainActivity">
 
-
-    <RelativeLayout
-        android:id="@+id/map_view"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/map_kakaomap"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#770000ff"
+            android:textColor="#fff"
+            android:padding="3dp"
+            android:gravity="center"
+            android:text="@string/menu_map"/>
 
-    <TextView android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#770000ff"
-        android:textColor="#fff"
-        android:padding="3dp"
-        android:gravity="center"
-        android:text="@string/menu_map"/>
-
-
-    <ProgressBar
-        android:id="@+id/map_loading_pb"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:indeterminateTint="@color/primary"
-        android:visibility="gone"
-        android:paddingBottom="1000dp"
-        android:paddingTop="1000dp"
-        android:paddingStart="1000dp"
-        android:paddingEnd="1000dp"/>
+    </androidx.recyclerview.widget.RecyclerView>
 
 
-</RelativeLayout>
+
+        <!-- ID must to be 'nav_host_fragment_container' -->
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/map_bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:background="@color/white"
+        app:itemRippleColor="@color/white"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/navi_menu" />
+    </androidx.constraintlayout.widget.ConstraintLayout>

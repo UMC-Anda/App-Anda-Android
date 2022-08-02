@@ -3,7 +3,6 @@ package com.example.anda.ui.login
 import android.view.View
 import android.widget.Toast
 import com.example.anda.data.entities.User
-
 import com.example.anda.data.remote.auth.AuthService
 import com.example.anda.data.remote.auth.Result
 import com.example.anda.databinding.ActivityLoginBinding

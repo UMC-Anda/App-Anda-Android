@@ -1,5 +1,6 @@
 package com.example.anda.data.remote.auth
 
+import com.example.anda.data.entities.MyLocation
 import com.example.anda.data.entities.User
 import retrofit2.Call
 import retrofit2.http.Body
@@ -18,6 +19,6 @@ interface AuthRetrofitInterface {
     @GET("/users/auto-login")
     fun autoLogin(): Call<AuthResponse>
     
-    @GET("/location/127.033311/37.5611326/5")
-    fun findOphthalmology(): Call<AuthResponse>
+    @POST("/location/127.033311/37.5611326/5")
+    fun findOphthalmology(@Body myLocation: MyLocation): Call<AuthResponse>
 }

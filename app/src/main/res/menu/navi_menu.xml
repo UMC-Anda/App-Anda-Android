@@ -11,7 +11,7 @@
         android:icon="@drawable/selector_navi_search"/>
 
     <item
-        android:id="@+id/mapFragment"
+        android:id="@+id/activity_map_view"
         android:enabled="true"
         android:title="@string/menu_map"
         android:icon="@color/black"/>

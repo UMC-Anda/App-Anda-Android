@@ -13,9 +13,9 @@ class MapFragment(): BaseFragment<FragmentMapBinding>(FragmentMapBinding::inflat
     override fun initAfterBinding() {
 
     }
-    override fun onCreate(savedInstanceState: Bundle?) {
+    /*override fun onCreate(savedInstanceState: Bundle?) {
         val intent = Intent(getActivity(), FindOphthalmologyActivity::class.java)
         startActivity(intent)
     }
-
+*/
 }

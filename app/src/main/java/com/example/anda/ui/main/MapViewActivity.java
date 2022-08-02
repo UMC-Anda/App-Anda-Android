@@ -41,7 +41,7 @@ public class MapViewActivity extends FragmentActivity
         mMapView.setMapViewEventListener(this);
         mMapView.setMapType(MapView.MapType.Standard);
 
-        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.map_view);
+        ViewGroup mapViewContainer = (ViewGroup) findViewById(R.id.activity_map_view);
         mapViewContainer.addView(mapLayout);
     }
 

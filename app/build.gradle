@@ -36,6 +36,9 @@ android {
     buildFeatures {
         viewBinding true
     }
+    dataBinding{
+        enabled = true
+    }
 }
 
 dependencies {
@@ -43,6 +46,7 @@ dependencies {
     //카카오 지도 api 받아오기
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/libDaumMapAndroid.jar')
+
 
 
     implementation 'androidx.core:core-ktx:1.7.0'
