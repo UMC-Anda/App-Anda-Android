@@ -9,5 +9,5 @@ data class User(
 //    @SerializedName("realName") val realName: String,
 //    @SerializedName("phoneNumber") val phoneNumber: String,
 //    @SerializedName("dateofBirth") val dateOfBirth: String,
-    @SerializedName("recommander") val recommander: String?
+    @SerializedName("recommendUserId") val recommendUserId: String?
 )

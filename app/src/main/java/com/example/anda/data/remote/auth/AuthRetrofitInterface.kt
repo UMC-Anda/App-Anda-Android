@@ -7,7 +7,9 @@ import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface AuthRetrofitInterface {
-    @POST("/users")
+
+    @POST("/users/signup")
+
     fun signUp(@Body user: User): Call<AuthResponse>
 
     @POST("/users/login")
@@ -15,4 +17,7 @@ interface AuthRetrofitInterface {
 
     @GET("/users/auto-login")
     fun autoLogin(): Call<AuthResponse>
+    
+    @GET("/location/127.033311/37.5611326/5")
+    fun findOphthalmology(): Call<AuthResponse>
 }
