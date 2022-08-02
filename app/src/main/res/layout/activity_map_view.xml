@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.map.FindOphthalmologyActivity">
 
+
     <RelativeLayout
         android:id="@+id/map_view"
         android:layout_width="match_parent"
@@ -20,6 +21,7 @@
         android:gravity="center"
         android:text="@string/menu_map"/>
 
+
     <ProgressBar
         android:id="@+id/map_loading_pb"
         android:layout_width="wrap_content"
@@ -31,5 +33,6 @@
         android:paddingTop="1000dp"
         android:paddingStart="1000dp"
         android:paddingEnd="1000dp"/>
+
 
 </RelativeLayout>

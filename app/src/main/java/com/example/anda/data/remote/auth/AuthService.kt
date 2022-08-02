@@ -14,6 +14,7 @@ import retrofit2.Response
 
 object AuthService {
     fun signUp(signUpView: SignUpView, user: User) {
+
         val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
         signUpView.onSignUpLoading()
         authService.signUp(user).enqueue(object : Callback<AuthResponse> {
@@ -29,6 +30,7 @@ object AuthService {
                     2004 -> signUpView.onSignUpFailure(resp.code, resp.message)
                     2005 -> signUpView.onSignUpFailure(resp.code, resp.message)
                     5001 -> signUpView.onSignUpFailure(resp.code, resp.message)
+
                     else -> signUpView.onSignUpFailure(resp.code, resp.message)
                 }
             }
@@ -50,8 +52,10 @@ object AuthService {
             override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
                 val resp = response.body()!!
 
+
                 when(val code = resp.code){
                     1000 -> loginView.onLoginSuccess(code, resp.result!!)
+
                     else -> loginView.onLoginFailure(resp.code, resp.message)
                 }
             }
@@ -86,6 +90,7 @@ object AuthService {
             }
         })
     }
+
 
     fun findOphthalmology(FindOphthalmologyView: FindOphthalmologyView, user: User) {
         val authService = retrofit.create(AuthRetrofitInterface::class.java)

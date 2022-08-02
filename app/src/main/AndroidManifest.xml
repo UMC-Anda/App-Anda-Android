@@ -35,6 +35,7 @@
             android:name=".ui.login.LoginActivity"
             android:exported="false"/>
         <activity
+
             android:name=".ui.siginup.SignUpActivity"
             android:exported="false"/>
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="e9a0d806e3104c45fa60c5b974332f24"/>

@@ -29,6 +29,7 @@ class SignUpActivity: BaseActivity<ActivitySignupBinding>(ActivitySignupBinding:
             binding.signUpIdEt.text.toString() + "@" + binding.signUpDirectInputEt.text.toString()
         val pwd: String = binding.signUpPasswordEt.text.toString()
         val nickName: String = binding.signUpNickNameEt.text.toString()
+
         val recommendUserId: String?
         if(binding.signUpRecommanderEt.text.isEmpty()){ recommendUserId = null }
         else{ recommendUserId = binding.signUpRecommanderEt.text.toString() }
@@ -71,6 +72,7 @@ class SignUpActivity: BaseActivity<ActivitySignupBinding>(ActivitySignupBinding:
             Toast.makeText(this, "비밀번호를 입력해주세요", Toast.LENGTH_SHORT).show()
             return
         }
+
         if (binding.signUpPasswordEt.text.toString() != binding.signUpPasswordCheckEt.text.toString()) {
             Toast.makeText(this, "비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show()
             return
@@ -81,6 +83,7 @@ class SignUpActivity: BaseActivity<ActivitySignupBinding>(ActivitySignupBinding:
         }
         AuthService.signUp(this, getUser())
         finish()
+
     }
 
     override fun onSignUpLoading() {
