@@ -6,7 +6,6 @@ import com.example.anda.ApplicationClass.Companion.retrofit
 import com.example.anda.data.entities.User
 import com.example.anda.ui.login.LoginView
 import com.example.anda.ui.siginup.SignUpView
-import com.example.anda.ui.main.map.FindOphthalmologyView
 import com.example.anda.ui.splash.SplashView
 import retrofit2.Call
 import retrofit2.Callback
@@ -92,26 +91,5 @@ object AuthService {
     }
 
 
-    fun findOphthalmology(FindOphthalmologyView: FindOphthalmologyView, user: User) {
-        val authService = retrofit.create(AuthRetrofitInterface::class.java)
-
-
-        authService.login(user).enqueue(object : Callback<AuthResponse> {
-            override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
-                val resp = response.body()!!
-
-                when(val code = resp.code){
-                    1000 -> FindOphthalmologyView.onFindSuccess()
-                    else -> FindOphthalmologyView.onFindFailure(code, resp.message)
-                }
-            }
-
-            override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
-                Log.d("$TAG/API-ERROR", t.message.toString())
-
-                FindOphthalmologyView.onFindFailure(400, "네트워크 오류가 발생했습니다.")
-            }
-        })
-    }
 
 }

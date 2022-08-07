@@ -2,16 +2,17 @@ package com.example.anda.data.entities
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.google.gson.annotations.SerializedName
 
 @Entity(tableName = "SongTable")
 data class Song(
-    @SerializedName("title") val title: String,
-    @SerializedName("singer") val singer: String,
-){
-    @PrimaryKey(autoGenerate = true)
-    var id: Int = 0
-
-    @SerializedName("isLike")
+    val title : String = "",
+    val singer : String = "",
+    var second : Int = 0,
+    var playTime : Int = 0,
+    var isPlaying : Boolean = false,
+    var music: String = "",
+    var coverImg: Int? = null,
     var isLike: Boolean = false
+){
+    @PrimaryKey(autoGenerate = true) var id: Int = 0
 }

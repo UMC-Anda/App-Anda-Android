@@ -11,7 +11,14 @@
     <string name="menu_map">지도</string>
     <string name="menu_matching">매칭</string>
     <string name="menu_mypage">마이페이지</string>
+    
+<!--    홈-->
+    <string name="home_info_lasek">#라섹 리뷰 모아보기</string>
+    <string name="home_info_lasik">#라식 리뷰 모아보기</string>
+    <string name="home_info_ophthalmology">#안과 진료 리뷰 모아보기</string>
+    <string name="home_info_top_ophthalmology">#내 주변 Top 병원(별점 순)</string>
 
+    
     <!--에러처리-->
     <string name="default_fail">네트워크연결이 원활하지 않습니다</string>
 
