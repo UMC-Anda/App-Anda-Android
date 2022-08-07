@@ -6,6 +6,18 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainActivity">
 
+    <ImageView
+        android:id="@+id/main_top_bar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:src="@drawable/anda_top_bar"
+        app:labelVisibilityMode="unlabeled"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/main_bottom_navigation"
+        app:layout_constraintBottom_toTopOf="@+id/nav_host_fragment_container"
+        />
+
+
     <!-- ID must to be 'nav_host_fragment_container' -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_container"
@@ -17,7 +29,7 @@
         app:navGraph="@navigation/navigation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_top_bar"
         app:layout_constraintBottom_toTopOf="@+id/main_bottom_navigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
