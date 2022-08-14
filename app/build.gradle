@@ -47,6 +47,8 @@ dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation files('libs/libDaumMapAndroid.jar')
 
+    //구글 지도
+    implementation 'com.google.android.gms:play-services-maps:18.1.0'
 
 
     implementation 'androidx.core:core-ktx:1.7.0'

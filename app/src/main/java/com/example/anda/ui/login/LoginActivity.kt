@@ -28,7 +28,7 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::in
     }
 
     private fun login() {
-        if (binding.loginIdEt.text.toString().isEmpty() || binding.loginDirectInputEt.text.toString().isEmpty()) {
+        if (binding.loginIdEt.text.toString().isEmpty()) {
             Toast.makeText(this, "이메일을 입력해주세요.", Toast.LENGTH_SHORT).show()
             return
         }
@@ -38,7 +38,7 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::in
             return
         }
 
-        val email = binding.loginIdEt.text.toString() + "@" + binding.loginDirectInputEt.text.toString()
+        val email = binding.loginIdEt.text.toString()
         val password = binding.loginPasswordEt.text.toString()
         val user = User(email, password, "", "")
 

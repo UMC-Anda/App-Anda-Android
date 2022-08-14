@@ -38,15 +38,17 @@
         android:layout_height="40sp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="80dp"
-        android:layout_marginEnd="5dp"
+        android:layout_marginEnd="20dp"
         android:background="@drawable/border_common"
         android:hint="@string/login_id_hint"
-        android:inputType="text"
+        android:paddingStart="10sp"
+        android:inputType="textEmailAddress"
         android:textSize="16sp"
-        app:layout_constraintEnd_toStartOf="@+id/login_at_sign_tv"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login_anda_logo_iv"
         android:autofillHints="@null"/>
+
 
     <View
         android:id="@+id/login_id_underscore_view"
@@ -58,44 +60,6 @@
         app:layout_constraintStart_toStartOf="@+id/login_id_et"
         app:layout_constraintTop_toBottomOf="@+id/login_id_et" />
 
-    <TextView
-        android:id="@+id/login_at_sign_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/login_email_delimiter"
-        android:textColor="@color/black"
-        android:textSize="14sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/login_id_et"
-        app:layout_constraintEnd_toEndOf="@+id/login_anda_logo_iv"
-        app:layout_constraintStart_toStartOf="@+id/login_anda_logo_iv"
-        app:layout_constraintTop_toTopOf="@+id/login_id_et" />
-
-    <EditText
-        android:id="@+id/login_direct_input_et"
-        android:layout_width="0dp"
-        android:layout_height="40sp"
-        android:layout_marginStart="5dp"
-        android:layout_marginEnd="20dp"
-        android:background="@drawable/border_common"
-        android:hint="@string/login_email_hint"
-        android:inputType="textWebEmailAddress"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/login_id_et"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/login_at_sign_tv"
-        app:layout_constraintTop_toTopOf="@+id/login_id_et"
-        android:autofillHints="@null"/>
-
-    <View
-        android:id="@+id/login_address_underscore_view"
-        android:layout_width="0dp"
-        android:layout_height="1px"
-        android:layout_marginTop="15dp"
-        android:background="#a8a8a8"
-        app:layout_constraintEnd_toEndOf="@+id/login_direct_input_et"
-        app:layout_constraintStart_toStartOf="@+id/login_direct_input_et"
-        app:layout_constraintTop_toBottomOf="@+id/login_direct_input_et" />
 
     <EditText
         android:id="@+id/login_password_et"
@@ -106,6 +70,7 @@
         android:layout_marginEnd="20dp"
         android:background="@drawable/border_common"
         android:hint="@string/signup_password_hint"
+        android:paddingStart="10sp"
         android:inputType="textPassword"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"

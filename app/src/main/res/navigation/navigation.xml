@@ -13,9 +13,8 @@
         android:id="@+id/searchFragment"
         android:name="com.example.anda.ui.main.search.SearchFragment"
         android:label="searchFragment"/>
-
     <fragment
-        android:id="@+id/mapFragment"
+        android:id="@+id/google_map_fragment"
         android:name="com.example.anda.ui.main.map.MapFragment"
         android:label="mapFragment"/>
 
