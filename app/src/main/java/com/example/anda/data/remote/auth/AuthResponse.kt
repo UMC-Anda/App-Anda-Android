@@ -2,9 +2,14 @@ package com.example.anda.data.remote.auth
 
 import com.google.gson.annotations.SerializedName
 
-
+data class AuthResponse(
+    @SerializedName("isSuccess") val isSuccess: Boolean,
+    @SerializedName("code") val code: Int,
+    @SerializedName("message") val message: String,
+    @SerializedName("result") val result: Result?
+)
 data class Result(
-    @SerializedName("email") val email: String,
+    @SerializedName("email") val email: String?,
     @SerializedName("name") val name: String,
     @SerializedName("cityname") val cityname: String,
     @SerializedName("townname") val townname: String,
@@ -16,13 +21,4 @@ data class Result(
     @SerializedName("yCooordi") val yCooordi: Float,
     @SerializedName("distance") val distance: Float,
     @SerializedName("jwt") val jwt: String
-    )
-
-
-data class AuthResponse(
-    @SerializedName("isSuccess") val isSuccess: Boolean,
-    @SerializedName("code") val code: Int,
-    @SerializedName("message") val message: String,
-    @SerializedName("result") val result: Result?
-
 )

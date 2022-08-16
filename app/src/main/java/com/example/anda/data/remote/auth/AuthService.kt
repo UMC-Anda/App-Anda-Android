@@ -14,13 +14,14 @@ import retrofit2.Response
 object AuthService {
     fun signUp(signUpView: SignUpView, user: User) {
 
-        val authService = getRetrofit().create(AuthRetrofitInterface::class.java)
+        val authService = retrofit.create(AuthRetrofitInterface::class.java)
+
         signUpView.onSignUpLoading()
+
         authService.signUp(user).enqueue(object : Callback<AuthResponse> {
             override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
-
                 val resp = response.body()!!
-
+                Log.d("$TAG/RESP-SIGNUP", "뭐가 문제야")
                 when(resp.code){
                     1000 -> signUpView.onSignUpSuccess()
                     2001 -> signUpView.onSignUpFailure(resp.code, resp.message)
@@ -28,8 +29,6 @@ object AuthService {
                     2003 -> signUpView.onSignUpFailure(resp.code, resp.message)
                     2004 -> signUpView.onSignUpFailure(resp.code, resp.message)
                     2005 -> signUpView.onSignUpFailure(resp.code, resp.message)
-                    5001 -> signUpView.onSignUpFailure(resp.code, resp.message)
-
                     else -> signUpView.onSignUpFailure(resp.code, resp.message)
                 }
             }
@@ -69,19 +68,15 @@ object AuthService {
 
     fun autoLogin(splashView: SplashView) {
         val authService = retrofit.create(AuthRetrofitInterface::class.java)
-
         splashView.onAutoLoginLoading()
-
         authService.autoLogin().enqueue(object : Callback<AuthResponse> {
             override fun onResponse(call: Call<AuthResponse>, response: Response<AuthResponse>) {
                 val resp = response.body()!!
-
                 when(resp.code){
                     1000 -> splashView.onAutoLoginSuccess()
                     else -> splashView.onAutoLoginFailure(resp.code, resp.message)
                 }
             }
-
             override fun onFailure(call: Call<AuthResponse>, t: Throwable) {
                 Log.d("$TAG/API-ERROR", t.message.toString())
 

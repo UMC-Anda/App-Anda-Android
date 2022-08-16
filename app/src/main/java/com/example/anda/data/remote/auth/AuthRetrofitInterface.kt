@@ -4,17 +4,18 @@ import com.example.anda.data.entities.MyLocation
 import com.example.anda.data.entities.User
 import retrofit2.Call
 import retrofit2.http.Body
+import retrofit2.http.FormUrlEncoded
 import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface AuthRetrofitInterface {
 
     @POST("/users/signup")
-
     fun signUp(@Body user: User): Call<AuthResponse>
 
-    @POST("/users/login")
+    @POST("/users/signin")
     fun login(@Body user: User): Call<AuthResponse>
+
 
     @GET("/users/auto-login")
     fun autoLogin(): Call<AuthResponse>
