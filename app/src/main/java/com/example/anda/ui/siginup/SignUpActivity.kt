@@ -1,16 +1,28 @@
 package com.example.anda.ui.siginup
 
+import android.os.Bundle
+import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.anda.data.entities.User
-import com.example.anda.data.remote.auth.AuthService
+//import com.example.anda.data.remote.auth.AuthService
 import com.example.anda.databinding.ActivitySignupBinding
-import com.example.anda.ui.BaseActivity
+import com.example.anda.ui.siginup.model.SignUpRequestBody
+import com.example.anda.ui.siginup.model.SignupResponse
+import java.lang.NullPointerException
 
 
-class SignUpActivity: BaseActivity<ActivitySignupBinding>(ActivitySignupBinding::inflate), SignUpView, View.OnClickListener {
+class SignUpActivity: AppCompatActivity(), SignUpView, View.OnClickListener {
+    lateinit var binding : ActivitySignupBinding
 
-    override fun initAfterBinding() {
+
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivitySignupBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
         binding.signUpBackIv.setOnClickListener(this)
         binding.signUpSignUpBtn.setOnClickListener(this)
     }
@@ -22,24 +34,6 @@ class SignUpActivity: BaseActivity<ActivitySignupBinding>(ActivitySignupBinding:
             binding.signUpBackIv -> finish()
             binding.signUpSignUpBtn -> signUp()
         }
-    }
-
-    private fun getUser(): User {
-        val email: String =
-            binding.signUpIdEt.text.toString() + "@" + binding.signUpDirectInputEt.text.toString()
-        val pwd: String = binding.signUpPasswordEt.text.toString()
-        val nickName: String = binding.signUpNickNameEt.text.toString()
-        val recommendUserId: String
-        if(binding.signUpRecommanderEt.text.isEmpty()){
-            recommendUserId = "null"
-        }
-        else{
-            recommendUserId = binding.signUpRecommanderEt.text.toString()
-        }
-//        val phoneNum: String = binding.signUpPhoneNumberEt.text.toString()
-//        val realName: String = binding.signUpRealNameEt.text.toString()
-//        val dateOfBirth: String = binding.signUpDateOfBirthEt.text.toString()
-        return User(email, pwd, nickName, recommendUserId)
     }
 
     private fun signUp() {
@@ -85,16 +79,28 @@ class SignUpActivity: BaseActivity<ActivitySignupBinding>(ActivitySignupBinding:
             Toast.makeText(this, "닉네임을 입력해주세요.", Toast.LENGTH_SHORT).show()
             return
         }
-        AuthService.signUp(this, getUser())
+        val email: String =
+            binding.signUpIdEt.text.toString() + "@" + binding.signUpDirectInputEt.text.toString()
+        val pwd: String = binding.signUpPasswordEt.text.toString()
+        val nickName: String = binding.signUpNickNameEt.text.toString()
+        val recommendUserId: String
+        if(binding.signUpRecommanderEt.text.isEmpty()){
+            recommendUserId = "null"
+        }
+        else{
+            recommendUserId = binding.signUpRecommanderEt.text.toString()
+        }
+
+        val userinfo = SignUpRequestBody(email,pwd,nickName,recommendUserId)
+
+
+        val service = SignupService(this, userinfo)
+        service.trySignup()
     }
 
-    override fun onSignUpLoading() {
-        binding.signUpLoadingPb.visibility = View.VISIBLE
-    }
 
-    override fun onSignUpSuccess() {
-        binding.signUpLoadingPb.visibility = View.GONE
-        finish()
+    override fun onSignUpSuccess(response: SignupResponse) {
+        Log.d("회원가입","성공!")
     }
 
     override fun onSignUpFailure(code: Int, message: String) {

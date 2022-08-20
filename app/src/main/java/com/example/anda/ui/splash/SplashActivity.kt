@@ -2,10 +2,9 @@ package com.example.anda.ui.splash
 
 import android.os.Handler
 import android.os.Looper
-import com.example.anda.data.remote.auth.AuthService
 import com.example.anda.databinding.ActivitySplashBinding
 import com.example.anda.ui.BaseActivity
-import com.example.anda.ui.login.LoginActivity
+//import com.example.anda.ui.login.LoginActivity
 import com.example.anda.ui.main.MainActivity
 
 
@@ -18,7 +17,7 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
     }
 
     private fun autoLogin() {
-        AuthService.autoLogin(this)
+//        AuthService.autoLogin(this)
     }
 
     override fun onAutoLoginLoading() {
@@ -30,6 +29,6 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
     }
 
     override fun onAutoLoginFailure(code: Int, message: String) {
-        startActivityWithClear(LoginActivity::class.java)
+//        startActivityWithClear(LoginActivity::class.java)
     }
 }
