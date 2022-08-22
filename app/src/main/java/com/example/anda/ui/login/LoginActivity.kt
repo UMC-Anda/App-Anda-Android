@@ -8,7 +8,7 @@ import com.example.anda.ui.BaseActivity
 import com.example.anda.ui.login.model.LoginRequestBody
 import com.example.anda.ui.login.model.LoginResponse
 import com.example.anda.ui.main.MainActivity
-import com.example.anda.ui.siginup.SignupActivity
+import com.example.anda.ui.login.LoginActivity
 import com.example.anda.utils.saveJwt
 
 class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate), LoginView, View.OnClickListener {
@@ -23,7 +23,7 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::in
         if (v == null) return
 
         when (v) {
-            binding.loginSignUpTv -> startNextActivity(SignupActivity::class.java)
+            binding.loginSignUpTv -> startNextActivity(LoginActivity::class.java)
             binding.loginSignInBtn -> login()
         }
     }
@@ -64,7 +64,7 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::in
     override fun onLoginFailure(code: Int, message: String) {
         Log.d("로그인", "실패!")
         binding.loginLoadingPb.visibility = View.GONE
-        binding.loginErrorTv.visibility = View.VISxIBLE
+        binding.loginErrorTv.visibility = View.VISIBLE
         binding.loginErrorTv.text = message
     }
 }

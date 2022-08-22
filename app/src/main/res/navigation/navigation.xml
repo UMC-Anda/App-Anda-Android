@@ -10,21 +10,22 @@
         android:label="homeFragment"/>
 
     <fragment
-        android:id="@+id/searchFragment"
-        android:name="com.example.anda.ui.main.search.SearchFragment"
-        android:label="searchFragment"/>
+        android:id="@+id/eventFragment"
+        android:name="com.example.anda.ui.main.event.EventFragment"
+        android:label="eventFragment"/>
     <fragment
         android:id="@+id/google_map_fragment"
         android:name="com.example.anda.ui.main.map.MapFragment"
         android:label="mapFragment"/>
 
     <fragment
-        android:id="@+id/matchFragment"
-        android:name="com.example.anda.ui.main.match.MatchFragment"
-        android:label="matchFragment"/>
+        android:id="@+id/dictionaryFragment"
+        android:name="com.example.anda.ui.main.dictionary.DictionaryFragment"
+        android:label="directionFragment"/>
 
     <fragment
         android:id="@+id/mypageFragment"
         android:name="com.example.anda.ui.main.mypage.MypageFragment"
         android:label="mypageFragment"/>
+
 </navigation>

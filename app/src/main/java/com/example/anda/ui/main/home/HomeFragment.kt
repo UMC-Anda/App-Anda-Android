@@ -9,6 +9,8 @@ import com.example.anda.data.entities.ReviewNearOphthalmology
 import com.example.anda.data.entities.ReviewOphthalmology
 import com.example.anda.databinding.FragmentHomeBinding
 import com.example.anda.ui.BaseFragment
+import com.example.anda.ui.main.MainActivity
+import com.example.anda.ui.main.dictionary.SymptomFragment
 
 
 class HomeFragment(): BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {
@@ -19,6 +21,16 @@ class HomeFragment(): BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inf
     private var reviewNearOphthalmologyDatas = ArrayList<ReviewNearOphthalmology>()
 
     override fun initAfterBinding(){
+
+
+
+        binding.homeAddMyreviewIv.setOnClickListener {
+            (context as MainActivity).supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_container, AddReviewFragment())
+                .commitAllowingStateLoss()
+        }
+
+
 
         //데이터 리스트 생성 더미 데이터
         //라섹
@@ -83,6 +95,8 @@ class HomeFragment(): BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inf
         binding.homeInfobannerVp.adapter = homebannerAdapter
         binding.homeInfobannerVp.orientation = ViewPager2.ORIENTATION_HORIZONTAL
     }
+
+
 
 
 }
