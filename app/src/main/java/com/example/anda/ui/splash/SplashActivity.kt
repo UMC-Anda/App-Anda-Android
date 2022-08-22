@@ -4,7 +4,7 @@ import android.os.Handler
 import android.os.Looper
 import com.example.anda.databinding.ActivitySplashBinding
 import com.example.anda.ui.BaseActivity
-//import com.example.anda.ui.login.LoginActivity
+import com.example.anda.ui.login.LoginActivity
 import com.example.anda.ui.main.MainActivity
 
 
@@ -14,6 +14,7 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
         Handler(Looper.getMainLooper()).postDelayed({
             autoLogin()
         }, 2000)
+        startActivityWithClear(LoginActivity::class.java)
     }
 
     private fun autoLogin() {
@@ -29,6 +30,6 @@ class SplashActivity: BaseActivity<ActivitySplashBinding>(ActivitySplashBinding:
     }
 
     override fun onAutoLoginFailure(code: Int, message: String) {
-//        startActivityWithClear(LoginActivity::class.java)
+        startActivityWithClear(LoginActivity::class.java)
     }
 }

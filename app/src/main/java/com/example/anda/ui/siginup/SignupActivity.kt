@@ -5,24 +5,19 @@ import android.util.Log
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.example.anda.data.entities.User
 //import com.example.anda.data.remote.auth.AuthService
 import com.example.anda.databinding.ActivitySignupBinding
-import com.example.anda.ui.siginup.model.SignUpRequestBody
+import com.example.anda.ui.siginup.model.SignupRequestBody
 import com.example.anda.ui.siginup.model.SignupResponse
-import java.lang.NullPointerException
 
 
-class SignUpActivity: AppCompatActivity(), SignUpView, View.OnClickListener {
+class SignupActivity: AppCompatActivity(), SignupView, View.OnClickListener {
     lateinit var binding : ActivitySignupBinding
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivitySignupBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
         binding.signUpBackIv.setOnClickListener(this)
         binding.signUpSignUpBtn.setOnClickListener(this)
     }
@@ -91,18 +86,20 @@ class SignUpActivity: AppCompatActivity(), SignUpView, View.OnClickListener {
             recommendUserId = binding.signUpRecommanderEt.text.toString()
         }
 
-        val userinfo = SignUpRequestBody(email,pwd,nickName,recommendUserId)
+        val userinfo = SignupRequestBody(email,pwd,nickName,recommendUserId)
 
 
         val service = SignupService(this, userinfo)
         service.trySignup()
     }
 
-
+    override fun onSignUpLoading() {
+        binding.signUpLoadingPb.visibility - View.VISIBLE
+    }
     override fun onSignUpSuccess(response: SignupResponse) {
+        binding.signUpLoadingPb.visibility = View.GONE
         Log.d("회원가입","성공!")
     }
-
     override fun onSignUpFailure(code: Int, message: String) {
         binding.signUpLoadingPb.visibility = View.GONE
         binding.signUpEmailErrorTv.visibility = View.VISIBLE
