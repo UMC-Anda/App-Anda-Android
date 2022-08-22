@@ -26,22 +26,21 @@
         <activity
             android:name=".ui.splash.SplashActivity"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"/>
-<!--        <activity-->
-<!--            android:name=".ui.login.LoginActivity"-->
-<!--            android:exported="true"/>-->
         <activity
-            android:name=".ui.siginup.SignUpActivity"
-            android:exported="true">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:name=".ui.login.LoginActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.siginup.SignupActivity"
+            android:exported="true"/>
 
 
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="e9a0d806e3104c45fa60c5b974332f24"/>

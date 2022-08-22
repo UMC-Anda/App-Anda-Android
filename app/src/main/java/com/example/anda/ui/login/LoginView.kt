@@ -1,14 +1,11 @@
-//package com.example.anda.ui.login
-//
-//
-//import com.example.anda.data.remote.auth.Result
-//
-//
-//
-//interface LoginView {
-//    fun onLoginLoading()
-//
-//    fun onLoginSuccess(code: Int, auth: Result)
-//
-//    fun onLoginFailure(code: Int, message: String)
-//}
+package com.example.anda.ui.login
+
+
+import com.example.anda.ui.login.model.LoginResponse
+
+
+interface LoginView {
+    fun onLoginLoading()
+    fun onLoginSuccess(response: LoginResponse)
+    fun onLoginFailure(code: Int, message: String)
+}
