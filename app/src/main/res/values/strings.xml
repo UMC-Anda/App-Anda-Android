@@ -45,7 +45,12 @@
     <string name="signup_recommander_hint">추천인</string>
     <string name="signup_email_delimiter">\@</string>
 
-<!--    안과백과-->
+
+    <string name="find_id">아이디 찾기</string>
+    <string name="find_pwd">비밀번호 찾기</string>
+    <string name="find_id_put_nickname_hint">닉네임을 입력해주세요.</string>
+    <string name="find_id_put_email_hint">이메일을 입력해주세요.</string>
+
     <string name="dictionary_title">안과백과</string>
     <string name="dictionary_info">안과계 백과사전, ~~\n이런식으로 설명쓰면 좋을거 같아요</string>
     <string name="dictionary_symptom">증상\n카테고리</string>
