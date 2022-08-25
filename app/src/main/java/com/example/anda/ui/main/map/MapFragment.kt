@@ -1,72 +1,39 @@
 package com.example.anda.ui.main.map
 
 
-import android.Manifest
-import android.content.Context.LOCATION_SERVICE
-import android.content.Intent
-import android.content.pm.PackageManager
+import android.annotation.SuppressLint
 import android.location.*
 import android.os.Bundle
+import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityCompat
-import androidx.core.content.ContextCompat
-import androidx.core.content.ContextCompat.getSystemService
-import androidx.databinding.DataBindingUtil.setContentView
 import androidx.fragment.app.Fragment
 import com.example.anda.R
+import com.example.anda.databinding.FragmentDictionaryBinding
 import com.example.anda.databinding.FragmentMapBinding
+import com.example.anda.ui.main.MainActivity
+import com.example.anda.ui.main.dictionary.SymptomFragment
+import com.example.anda.ui.main.home.AddReviewFragment
+import com.google.android.gms.location.*
+import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.CameraPosition
 import com.google.android.gms.maps.model.LatLng
 import com.google.android.gms.maps.model.MarkerOptions
 
 
-class MapFragment : Fragment(),OnMapReadyCallback {
-/*
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_map)
-
-        val locationManager = getSystemService(LOCATION_SERVICE) as LocationManager
-
-
-        if (ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_FINE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(
-                this,
-                Manifest.permission.ACCESS_COARSE_LOCATION
-            ) != PackageManager.PERMISSION_GRANTED
-        ) {
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
-            return
-        }
-        locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 1000, 0f, locationListener())
-    }
-
-    internal inner class locationListener : LocationListener{
-        override fun onLocationChanged(p0: Location) {
-            val geocoder : Geocoder = Geocoder(this@MapFragment)
-            val list = geocoder.getFromLocation(p0.latitude, p0.longitude,1) as List<Address>
-            binding
-        }
-    }
-    */
+class MapFragment() : Fragment(),OnMapReadyCallback {
     private lateinit var mapView : MapView
-
+    private lateinit var mMap : GoogleMap
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_map,container,false)
+
         mapView = rootView.findViewById(R.id.mapFragment) as MapView
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
@@ -74,10 +41,10 @@ class MapFragment : Fragment(),OnMapReadyCallback {
     }
 
     //지도 객체를 사용할 수 있을 때 자동으로 호출되는 함수
-    override fun onMapReady(map: GoogleMap) {
-        val point = LatLng(37.514655, 126.979974)
-        map.addMarker(MarkerOptions().position(point).title("현위치"))
-        map.moveCamera(CameraUpdateFactory.newLatLngZoom(point,12f))
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+        fusedLocationClient = (activity as MainActivity).getFusedLocation()
+        setUpdateLocationLister()
     }
     override fun onStart() {
         super.onStart()
@@ -108,5 +75,37 @@ class MapFragment : Fragment(),OnMapReadyCallback {
         mapView.onDestroy()
     }
 
+    lateinit var fusedLocationClient:FusedLocationProviderClient
+    lateinit var locationCallback: LocationCallback
+
+    @SuppressLint("MissingPermission")
+    public fun setUpdateLocationLister(){
+        val locationRequest = LocationRequest.create()
+        locationRequest.run {
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+        }
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult) {
+                locationResult?.let {
+                    for ((i, location) in it.locations.withIndex()) {
+                        Log.d("로케이션", "$i ${location.latitude}, ${location.longitude}")
+                        setLastLocation(location)
+                    }
+                }
+            }
+        }
+        //로케이션 요청 함수 호출(locationRequest, locationCallback)
+        fusedLocationClient.requestLocationUpdates(locationRequest,locationCallback, Looper.myLooper())
+    }
+
+    fun setLastLocation(location : Location){
+        val myLocation = LatLng(location.latitude, location.longitude)
+        val markerOptions = MarkerOptions().position(myLocation).title("내 위치")
+        val cameraOption = CameraPosition.Builder().target(myLocation).zoom(15.0f).build()
+        val camera = CameraUpdateFactory.newCameraPosition(cameraOption)
+
+        mMap.addMarker(markerOptions)
+        mMap.moveCamera(camera)
+    }
 
 }
