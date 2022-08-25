@@ -44,4 +44,10 @@
     <string name="signup_dateOfBirth_hint">생년월일</string>
     <string name="signup_recommander_hint">추천인</string>
     <string name="signup_email_delimiter">\@</string>
+
+<!--    유저정보 찾기-->
+    <string name="find_id">아이디 찾기</string>
+    <string name="find_pwd">비밀번호 찾기</string>
+    <string name="find_id_put_nickname_hint">닉네임을 입력해주세요.</string>
+    <string name="find_id_put_email_hint">이메일을 입력해주세요.</string>
 </resources>

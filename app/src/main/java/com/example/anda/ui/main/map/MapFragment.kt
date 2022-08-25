@@ -83,7 +83,6 @@ class MapFragment : Fragment(),OnMapReadyCallback {
         super.onStart()
         mapView.onStart()
     }
-
     override fun onStop() {
         super.onStop()
         mapView.onStop()
