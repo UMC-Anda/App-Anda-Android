@@ -11,6 +11,10 @@ import com.example.anda.ui.login.model.LoginResponse
 import com.example.anda.ui.main.MainActivity
 import com.example.anda.ui.siginup.SignupActivity
 
+import com.example.anda.ui.login.LoginActivity
+import com.example.anda.utils.saveJwt
+
+
 class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::inflate), LoginView, View.OnClickListener {
 
     override fun initAfterBinding() {
@@ -24,8 +28,10 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::in
         if (v == null) return
 
         when (v) {
+
             binding.loginSignUpTv -> startNextActivity(SignupActivity::class.java)
             binding.loginFindIdTv -> startNextActivity(FindIdActivity::class.java)
+            binding.loginSignUpTv -> startNextActivity(LoginActivity::class.java)
             binding.loginSignInBtn -> login()
         }
     }

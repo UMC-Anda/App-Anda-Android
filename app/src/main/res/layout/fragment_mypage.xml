@@ -5,6 +5,82 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ImageView
+        android:id="@+id/mypage_background_iv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/whitegray"/>
+
+    <ImageView
+        android:id="@+id/mypage_userinfo_background_iv"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@color/white"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/mypage_userinfo_profile_iv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="50dp"
+        android:background="@drawable/border_common"
+        android:src="@drawable/ic_back"
+        app:layout_constraintStart_toStartOf="@id/mypage_userinfo_background_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_userinfo_background_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_userinfo_background_iv"/>
+
+    <TextView
+        android:id="@+id/mypage_userinfo_nickname_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="닉네임"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="20sp"
+        app:layout_constraintStart_toEndOf="@id/mypage_userinfo_profile_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_userinfo_profile_iv"/>
+
+    <TextView
+        android:id="@+id/mypage_userinfo_email_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="avcde@qwer.ccoom"
+        android:textSize="10sp"
+        app:layout_constraintStart_toStartOf="@id/mypage_userinfo_nickname_tv"
+        app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_nickname_tv"
+        android:layout_marginTop="5sp"/>
+    <TextView
+        android:id="@+id/mypage_userinfo_review_cnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="리뷰 0 | "
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/mypage_userinfo_nickname_tv"
+        app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_email_tv"
+        android:layout_marginTop="5sp"/>
+    <TextView
+        android:id="@+id/mypage_userinfo_review_useful_cnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="도움이 되었어요 0 | "
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/mypage_userinfo_review_cnt"
+        app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_email_tv"
+        android:layout_marginTop="5sp"/>
+    <TextView
+        android:id="@+id/mypage_userinfo_review_photo_cnt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="사진 0"
+        android:textSize="13sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toEndOf="@id/mypage_userinfo_review_useful_cnt"
+        app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_email_tv"
+        android:layout_marginTop="5sp"/>
+
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -14,4 +90,192 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <ImageView
+        android:id="@+id/mypage_useract_background_iv"
+        android:layout_width="match_parent"
+        android:layout_height="246dp"
+        android:layout_marginTop="20dp"
+        android:src="@color/whitegray"
+        app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_background_iv"/>
+    <ImageView
+        android:id="@+id/mypage_useract_myreview_iv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_background_iv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50sp"
+        android:text="내 리뷰"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/mypage_useract_myreview_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_myreview_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_myreview_iv"/>
+    <ImageView
+        android:id="@+id/mypage_useract_myreview_go_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="50sp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintEnd_toEndOf="@id/mypage_useract_myreview_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_myreview_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_myreview_iv"/>
+
+    <ImageView
+        android:id="@+id/mypage_useract_medical_history_iv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mypage_useract_myreview_iv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50sp"
+        android:text="내 진료내역"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/mypage_useract_medical_history_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_medical_history_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_medical_history_iv"/>
+    <ImageView
+        android:id="@+id/mypage_useract_medical_history_go_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="50sp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintEnd_toEndOf="@id/mypage_useract_medical_history_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_medical_history_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_medical_history_iv"/>
+
+    <ImageView
+        android:id="@+id/mypage_useract_reservation_iv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mypage_useract_medical_history_iv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50sp"
+        android:text="내 예약내역"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/mypage_useract_reservation_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_reservation_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_reservation_iv"/>
+    <ImageView
+        android:id="@+id/mypage_useract_reservation_go_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="50sp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintEnd_toEndOf="@id/mypage_useract_reservation_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_reservation_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_reservation_iv"/>
+
+    <ImageView
+        android:id="@+id/mypage_useract_point_iv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mypage_useract_reservation_iv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50sp"
+        android:text="내 예약내역"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/mypage_useract_point_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_point_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_point_iv"/>
+    <ImageView
+        android:id="@+id/mypage_useract_point_go_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="50sp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintEnd_toEndOf="@id/mypage_useract_point_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_point_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_point_iv"/>
+
+    <ImageView
+        android:id="@+id/mypage_useract_invite_iv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mypage_useract_point_iv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50sp"
+        android:text="친구 초대하기"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/mypage_useract_invite_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_invite_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_invite_iv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50sp"
+        android:text="1,000P 받기"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toStartOf="@id/mypage_useract_invite_go_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_invite_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_invite_iv"/>
+    <ImageView
+        android:id="@+id/mypage_useract_invite_go_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="50sp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintEnd_toEndOf="@id/mypage_useract_invite_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_invite_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_invite_iv"/>
+
+    <ImageView
+        android:id="@+id/mypage_useract_inquire_iv"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/mypage_useract_invite_iv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50sp"
+        android:text="문의하기"
+        android:textSize="20sp"
+        android:textColor="@color/black"
+        app:layout_constraintStart_toStartOf="@id/mypage_useract_inquire_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_inquire_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_inquire_iv"/>
+    <ImageView
+        android:id="@+id/mypage_useract_inquire_go_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="50sp"
+        android:src="@drawable/ic_back"
+        app:layout_constraintEnd_toEndOf="@id/mypage_useract_inquire_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_useract_inquire_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_inquire_iv"/>
+
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

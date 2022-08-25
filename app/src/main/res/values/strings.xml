@@ -7,9 +7,9 @@
 
     <!--메뉴-->
     <string name="menu_home">홈</string>
-    <string name="menu_search">찾기</string>
+    <string name="menu_event">이벤트</string>
     <string name="menu_map">지도</string>
-    <string name="menu_matching">매칭</string>
+    <string name="menu_dictionary">안과백과</string>
     <string name="menu_mypage">마이페이지</string>
     
 <!--    홈-->
@@ -45,9 +45,28 @@
     <string name="signup_recommander_hint">추천인</string>
     <string name="signup_email_delimiter">\@</string>
 
-<!--    유저정보 찾기-->
+
     <string name="find_id">아이디 찾기</string>
     <string name="find_pwd">비밀번호 찾기</string>
     <string name="find_id_put_nickname_hint">닉네임을 입력해주세요.</string>
     <string name="find_id_put_email_hint">이메일을 입력해주세요.</string>
+
+    <string name="dictionary_title">안과백과</string>
+    <string name="dictionary_info">안과계 백과사전, ~~\n이런식으로 설명쓰면 좋을거 같아요</string>
+    <string name="dictionary_symptom">증상\n카테고리</string>
+    <string name="dictionary_operation">수술\n지식</string>
+    <string name="dictionary_recommend_ophthalmology">안과\n추천</string>
+
+
+
+
+    <!--    증상 카테고리-->
+    <string name="dictionary_symptom_title">증상 카테고리</string>
+
+<!--    수술 추천-->
+    <string name="dictionary_operation_title">수술 지식</string>
+
+<!--    안과추천-->
+    <string name="dictionary_recommend_ophthalmology_title">안과 추천</string>
+
 </resources>
