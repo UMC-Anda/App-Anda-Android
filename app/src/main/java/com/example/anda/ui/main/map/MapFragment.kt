@@ -9,13 +9,22 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.anda.R
 import com.example.anda.databinding.FragmentDictionaryBinding
 import com.example.anda.databinding.FragmentMapBinding
+import com.example.anda.ui.find.id.FindIdActivity
+import com.example.anda.ui.login.LoginActivity
+import com.example.anda.ui.login.LoginService
+import com.example.anda.ui.login.model.LoginRequestBody
+import com.example.anda.ui.login.model.LoginResponse
 import com.example.anda.ui.main.MainActivity
 import com.example.anda.ui.main.dictionary.SymptomFragment
 import com.example.anda.ui.main.home.AddReviewFragment
+import com.example.anda.ui.main.map.location.LocationView
+import com.example.anda.ui.main.map.location.model.LocationResponse
+import com.example.anda.ui.siginup.SignupActivity
 import com.google.android.gms.location.*
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.maps.*
@@ -79,7 +88,7 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
     lateinit var locationCallback: LocationCallback
 
     @SuppressLint("MissingPermission")
-    public fun setUpdateLocationLister(){
+    fun setUpdateLocationLister(){
         val locationRequest = LocationRequest.create()
         locationRequest.run {
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
@@ -89,6 +98,7 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
                 locationResult?.let {
                     for ((i, location) in it.locations.withIndex()) {
                         Log.d("로케이션", "$i ${location.latitude}, ${location.longitude}")
+                        (activity as MainActivity).findMyLocation(location)
                         setLastLocation(location)
                     }
                 }
