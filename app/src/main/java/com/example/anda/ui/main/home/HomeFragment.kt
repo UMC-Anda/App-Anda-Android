@@ -1,5 +1,11 @@
 package com.example.anda.ui.main.home
 
+import android.graphics.Typeface
+import android.text.SpannableString
+import android.text.Spanned
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
+import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.viewpager2.widget.ViewPager2
 import com.example.anda.R
@@ -22,8 +28,32 @@ class HomeFragment(): BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inf
 
     override fun initAfterBinding(){
 
+        //특정 글씨만 굵게
+        val lasekTextView : TextView = binding.homeLasekReviewExpTv
+        val lasekText:String = "#라섹 리뷰 모아보기"
+        val lasekSpanString:SpannableString = SpannableString(lasekText)
+        lasekSpanString.setSpan(StyleSpan(Typeface.BOLD),0,3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        lasekTextView.text = lasekSpanString
 
+        val lasikTextView : TextView = binding.homeLasikReviewExpTv
+        val lasikText:String = "#라식 리뷰 모아보기"
+        val lasikSpanString:SpannableString = SpannableString(lasikText)
+        lasikSpanString.setSpan(StyleSpan(Typeface.BOLD),0,3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        lasikTextView.text = lasikSpanString
 
+        val ophthalmologyTextView : TextView = binding.homeOphthalmologyReviewExpTv
+        val ophthalmologyText:String = "#안과 진료 리뷰 모아보기"
+        val ophthalmologySpanString:SpannableString = SpannableString(ophthalmologyText)
+        ophthalmologySpanString.setSpan(StyleSpan(Typeface.BOLD),0,3, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        ophthalmologyTextView.text = ophthalmologySpanString
+
+        val nearOphthalmologyTextView : TextView = binding.homeNearOphthalmologyReviewExp2Tv
+        val nearOphthalmologyText:String = " TOP 병원(별점 순)"
+        val nearOphthalmologySpanString:SpannableString = SpannableString(nearOphthalmologyText)
+        nearOphthalmologySpanString.setSpan(StyleSpan(Typeface.BOLD),1,7, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        nearOphthalmologyTextView.text = nearOphthalmologySpanString
+
+        //클릭 설정
         binding.homeAddMyreviewIv.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
                 .replace(R.id.nav_host_fragment_container, AddReviewFragment())
@@ -94,6 +124,9 @@ class HomeFragment(): BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inf
         homebannerAdapter.addFragment(HomeBannerFragment(R.drawable.home_banneranner_3))
         binding.homeInfobannerVp.adapter = homebannerAdapter
         binding.homeInfobannerVp.orientation = ViewPager2.ORIENTATION_HORIZONTAL
+
+        //뷰페이저와 indicator 연결
+        binding.homeInfobannerIndicatorDi.setViewPager2(binding.homeInfobannerVp)
     }
 
 

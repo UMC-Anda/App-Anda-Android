@@ -20,9 +20,7 @@ class SymptomFragment(): Fragment(){
     ): View? {
         binding = FragmentDictionarySymptomBinding.inflate(inflater, container, false)
 
-        binding.symptomBackIv.setOnClickListener {
-            (context as MainActivity).supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container, DictionaryFragment()).commitAllowingStateLoss()
-        }
+
         return binding.root
     }
 }

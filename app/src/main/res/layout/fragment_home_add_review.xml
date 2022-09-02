@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -9,10 +11,123 @@
         android:id="@+id/home_add_review_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="리뷰 쓰기"
-        android:textSize="30sp"
+        android:text="#나의 리뷰 쓰기"
+        android:textSize="25sp"
+        android:textColor="@color/sub_color"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="30dp"/>
+    <ImageView
+        android:id="@+id/home_add_review_text_effect_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="@id/home_add_review_tv"
+        app:layout_constraintTop_toTopOf="@id/home_add_review_tv"
+        android:src="@drawable/lasek_text_effect" />
+
+
+    <ImageView
+        android:id="@+id/home_add_review_total_box_iv"
+        android:layout_width="300dp"
+        android:layout_height="450dp"
+        android:background="@drawable/review_total_box"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_add_review_tv"
+        tools:ignore="MissingConstraints"/>
+    <TextView
+        android:id="@+id/home_add_review_ophthalmology_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="병원"
+        android:textColor="@color/sub_color"
+        android:textSize="20sp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toTopOf="@id/home_add_review_total_box_iv"
+        app:layout_constraintStart_toStartOf="@id/home_add_review_total_box_iv"/>
+
+    <ImageView
+        android:id="@+id/home_add_review_ophthalmology_text_effect_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/my_review_text_effect"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="@id/home_add_review_ophthalmology_tv"
+        app:layout_constraintBottom_toBottomOf="@id/home_add_review_ophthalmology_tv" />
+
+    <EditText
+        android:id="@+id/home_add_review_search_ophthalmology_et"
+        android:layout_width="0dp"
+        android:layout_height="40sp"
+        android:layout_marginStart="80dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="80dp"
+        android:autofillHints="@null"
+        android:paddingStart="10sp"
+        android:inputType="textPersonName"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/home_add_review_ophthalmology_tv" />
+
+    <ImageView
+        android:id="@+id/home_add_review_search_ophthalmology_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/myreview_search_icon"
+        android:layout_marginEnd="3dp"
+        android:layout_marginBottom="2dp"
+        app:layout_constraintTop_toTopOf="@id/home_add_review_search_ophthalmology_et"
+        app:layout_constraintBottom_toBottomOf="@id/home_add_review_search_ophthalmology_et"
+        app:layout_constraintEnd_toEndOf="@+id/home_add_review_search_ophthalmology_et"/>
+
+    <TextView
+        android:id="@+id/home_add_review_review_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="리뷰"
+        android:textColor="@color/sub_color"
+        android:textSize="20sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@id/home_add_review_search_ophthalmology_et"
+        app:layout_constraintStart_toStartOf="@id/home_add_review_ophthalmology_tv"/>
+
+    <ImageView
+        android:id="@+id/home_add_review_review_text_effect_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/my_review_text_effect"
+        android:layout_marginEnd="10dp"
+        app:layout_constraintEnd_toEndOf="@id/home_add_review_review_tv"
+        app:layout_constraintBottom_toBottomOf="@id/home_add_review_review_tv" />
+
+    <ImageView
+        android:id="@+id/home_add_review_review_box_iv"
+        android:layout_width="200dp"
+        android:layout_height="250dp"
+        android:background="@drawable/review_box"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_add_review_review_tv"
+        tools:ignore="MissingConstraints"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/home_add_myreview_save_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/myreview_save_btn"
+        android:text="저장하기"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/sub_color"
+        android:layout_marginTop="30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/home_add_review_total_box_iv"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

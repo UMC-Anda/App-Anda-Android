@@ -52,8 +52,8 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
     //지도 객체를 사용할 수 있을 때 자동으로 호출되는 함수
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        fusedLocationClient = (activity as MainActivity).getFusedLocation()
-        setUpdateLocationLister()
+        //fusedLocationClient = (activity as MainActivity).getFusedLocation()
+        //setUpdateLocationLister()
     }
     override fun onStart() {
         super.onStart()
@@ -83,7 +83,7 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
         super.onDestroy()
         mapView.onDestroy()
     }
-
+/*
     lateinit var fusedLocationClient:FusedLocationProviderClient
     lateinit var locationCallback: LocationCallback
 
@@ -117,5 +117,5 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
         mMap.addMarker(markerOptions)
         mMap.moveCamera(camera)
     }
-
+*/
 }

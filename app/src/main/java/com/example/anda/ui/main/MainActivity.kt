@@ -22,7 +22,6 @@ import com.example.anda.ui.main.dictionary.DictionaryFragment
 import com.example.anda.ui.main.home.HomeFragment
 import com.example.anda.ui.main.map.MapFragment
 import com.example.anda.ui.main.mypage.MypageFragment
-import com.example.anda.ui.main.event.EventFragment
 import com.example.anda.ui.main.map.location.LocationService
 import com.example.anda.ui.main.map.location.LocationView
 import com.example.anda.ui.main.map.location.model.LocationRequestBody
@@ -67,10 +66,6 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
             when(item.itemId){
                 R.id.homeFragment->{
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,HomeFragment()).commitAllowingStateLoss()
-                    return@setOnItemSelectedListener true
-                }
-                R.id.eventFragment->{
-                    supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,EventFragment()).commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
                 R.id.mapFragment->{
