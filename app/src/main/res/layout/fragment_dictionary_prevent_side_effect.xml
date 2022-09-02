@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/recommendOphthalmologyFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/dictionary_side_effect_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:layout_marginStart="30sp"
+        android:text="@string/dictionary_recommend_ophthalmology_title"
+        android:textColor="@color/black"
+        android:textSize="25sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dictionary_side_effect_underbar"
+        app:layout_constraintBottom_toBottomOf="@+id/dictionary_side_effect_tv"
+        app:layout_constraintStart_toStartOf="@+id/dictionary_side_effect_tv"
+        app:layout_constraintEnd_toEndOf="@+id/dictionary_side_effect_tv"/>
+
+    <ImageView
+        android:id="@+id/dictionary_side_effect_common_category_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:src="@drawable/dictionary_category_background"
+        app:layout_constraintTop_toBottomOf="@+id/dictionary_side_effect_tv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/dictionary_side_effect_common_category_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="공통"
+        android:textColor="#282F20"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/dictionary_side_effect_common_category_iv"
+        app:layout_constraintEnd_toEndOf="@+id/dictionary_side_effect_common_category_iv"
+        app:layout_constraintTop_toTopOf="@+id/dictionary_side_effect_common_category_iv"
+        app:layout_constraintBottom_toBottomOf="@+id/dictionary_side_effect_common_category_iv"/>
+
+    <ImageView
+        android:id="@+id/dictionary_side_effect_lasik_category_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/dictionary_category_background"
+        app:layout_constraintTop_toBottomOf="@+id/dictionary_side_effect_common_category_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/dictionary_side_effect_lasik_category_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="라식"
+        android:textColor="#282F20"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/dictionary_side_effect_lasik_category_iv"
+        app:layout_constraintEnd_toEndOf="@+id/dictionary_side_effect_lasik_category_iv"
+        app:layout_constraintTop_toTopOf="@+id/dictionary_side_effect_lasik_category_iv"
+        app:layout_constraintBottom_toBottomOf="@+id/dictionary_side_effect_lasik_category_iv"/>
+
+    <ImageView
+        android:id="@+id/dictionary_side_effect_lasek_category_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/dictionary_category_background"
+        app:layout_constraintTop_toBottomOf="@+id/dictionary_side_effect_lasik_category_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/dictionary_side_effect_lasek_category_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="라섹"
+        android:textColor="#282F20"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/dictionary_side_effect_lasek_category_iv"
+        app:layout_constraintEnd_toEndOf="@+id/dictionary_side_effect_lasek_category_iv"
+        app:layout_constraintTop_toTopOf="@+id/dictionary_side_effect_lasek_category_iv"
+        app:layout_constraintBottom_toBottomOf="@+id/dictionary_side_effect_lasek_category_iv"/>
+
+
+    <ImageView
+        android:id="@+id/dictionary_side_effect_smile_category_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:src="@drawable/dictionary_category_background"
+        app:layout_constraintTop_toBottomOf="@+id/dictionary_side_effect_lasek_category_iv"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+    <TextView
+        android:id="@+id/dictionary_side_effect_smile_category_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="스마일 라식"
+        android:textColor="#282F20"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="@+id/dictionary_side_effect_smile_category_iv"
+        app:layout_constraintEnd_toEndOf="@+id/dictionary_side_effect_smile_category_iv"
+        app:layout_constraintTop_toTopOf="@+id/dictionary_side_effect_smile_category_iv"
+        app:layout_constraintBottom_toBottomOf="@+id/dictionary_side_effect_smile_category_iv"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

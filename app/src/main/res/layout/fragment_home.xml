@@ -8,130 +8,187 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.home.HomeFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-<!--        하나씩만 보여줄 배너-->
-        <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/home_infobanner_vp"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:layout_marginTop="15dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            android:layout_height="match_parent">
 
-        <ImageView
-            android:id="@+id/home_add_myreview_iv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:src="@drawable/add_review"
-            app:layout_constraintTop_toBottomOf="@id/home_infobanner_vp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="15dp"/>
+                <!--        하나씩만 보여줄 배너-->
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/home_infobanner_vp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginTop="15dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-<!--            라섹-->
-        <TextView
-            android:id="@+id/home_lasek_review_exp_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/home_info_lasek"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/home_add_myreview_iv"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="100dp"
-            android:layout_marginStart="20dp"/>
+                <com.tbuonomo.viewpagerdotsindicator.DotsIndicator
+                    android:id="@+id/home_infobanner_indicator_di"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:dotsColor="@color/whitegray"
+                    app:selectedDotColor="@color/sub_color"
+                    app:dotsCornerRadius="8dp"
+                    app:dotsSpacing="5dp"
+                    app:dotsSize="15dp"
+                    app:dotsWidthFactor="2"
+                    app:progressMode="true"
+                    tools:ignore="MissingConstraints"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/home_infobanner_vp"
+                    android:layout_marginTop="10dp"/>
 
+                <ImageView
+                    android:id="@+id/home_add_myreview_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/add_review"
+                    app:layout_constraintTop_toBottomOf="@id/home_infobanner_indicator_di"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginTop="30dp"/>
 
-        <!--        한 번에 여러개의 아이템을 보여줄 리뷰-->
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_lasek_review_rv"
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/home_lasek_review_exp_tv"
-            tools:itemCount="5"
-            tools:listitem="@layout/item_lasek_review"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"/>
-
-<!--            라식-->
-        <TextView
-            android:id="@+id/home_lasik_review_exp_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/home_info_lasik"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/home_lasek_review_rv"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginStart="20dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_lasik_review_rv"
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/home_lasik_review_exp_tv"
-            tools:itemCount="5"
-            tools:listitem="@layout/item_lasik_review"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"/>
-
-<!--            안과-->
-        <TextView
-            android:id="@+id/home_ophthalmology_review_exp_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/home_info_ophthalmology"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/home_lasik_review_rv"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="100dp"
-            android:layout_marginStart="20dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_ophthalmology_review_rv"
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:layout_marginTop="10dp"
-            app:layout_constraintTop_toBottomOf="@id/home_ophthalmology_review_exp_tv"
-            tools:itemCount="5"
-            tools:listitem="@layout/item_ophthalmology_review"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"/>
-
-<!--            근처 안과-->
-        <TextView
-            android:id="@+id/home_near_ophthalmology_review_exp_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/home_info_top_ophthalmology"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:textColor="@color/black"
-            app:layout_constraintTop_toBottomOf="@id/home_ophthalmology_review_rv"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="100dp"
-            android:layout_marginStart="20dp"/>
-
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/home_near_ophthalmology_review_rv"
-            android:layout_width="match_parent"
-            android:layout_height="210dp"
-            android:layout_marginTop="10dp"
-            tools:listitem="null"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-            android:orientation="horizontal"
-            app:layout_constraintTop_toBottomOf="@id/home_near_ophthalmology_review_exp_tv"/>
+                <!--            라섹-->
+                <ImageView
+                    android:id="@+id/home_lasek_text_effect_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/home_lasek_review_exp_tv"
+                    app:layout_constraintTop_toTopOf="@id/home_lasek_review_exp_tv"
+                    android:src="@drawable/lasek_text_effect" />
+                <TextView
+                    android:id="@+id/home_lasek_review_exp_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_info_lasek"
+                    android:textSize="25sp"
+                    android:textColor="@color/sub_color"
+                    app:layout_constraintTop_toBottomOf="@id/home_add_myreview_iv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginStart="20dp"/>
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+                <!--        한 번에 여러개의 아이템을 보여줄 리뷰-->
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_lasek_review_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/home_lasek_review_exp_tv"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_lasek_review"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"/>
+
+                <!--            라식-->
+                <TextView
+                    android:id="@+id/home_lasik_review_exp_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_info_lasik"
+                    android:textSize="25sp"
+                    android:textColor="@color/sub_color"
+                    app:layout_constraintTop_toBottomOf="@id/home_lasek_review_rv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="20dp"/>
+                <ImageView
+                    android:id="@+id/home_lasik_text_effect_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/home_lasik_review_exp_tv"
+                    app:layout_constraintTop_toTopOf="@id/home_lasik_review_exp_tv"
+                    android:src="@drawable/lasek_text_effect" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_lasik_review_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/home_lasik_review_exp_tv"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_lasik_review"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"/>
+
+                <!--            안과-->
+                <TextView
+                    android:id="@+id/home_ophthalmology_review_exp_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_info_ophthalmology"
+                    android:textSize="25sp"
+                    android:textColor="@color/black"
+                    app:layout_constraintTop_toBottomOf="@id/home_lasik_review_rv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="20dp"/>
+                <ImageView
+                    android:id="@+id/home_ophthalmology_text_effect_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/home_ophthalmology_review_exp_tv"
+                    app:layout_constraintTop_toTopOf="@id/home_ophthalmology_review_exp_tv"
+                    android:src="@drawable/lasek_text_effect" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_ophthalmology_review_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/home_ophthalmology_review_exp_tv"
+                    tools:itemCount="5"
+                    tools:listitem="@layout/item_ophthalmology_review"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"/>
+
+                <!--            근처 안과-->
+                <TextView
+                    android:id="@+id/home_near_ophthalmology_review_exp1_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_info_top_ophthalmology1"
+                    android:textSize="25sp"
+                    android:textColor="@color/sub_color"
+                    app:layout_constraintTop_toBottomOf="@id/home_ophthalmology_review_rv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:layout_marginTop="40dp"
+                    android:layout_marginStart="20dp"/>
+                <TextView
+                    android:id="@+id/home_near_ophthalmology_review_exp2_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/home_info_top_ophthalmology2"
+                    android:textSize="25sp"
+                    android:textColor="@color/sub_color"
+                    app:layout_constraintTop_toTopOf="@id/home_near_ophthalmology_review_exp1_tv"
+                    app:layout_constraintStart_toEndOf="@id/home_near_ophthalmology_review_exp1_tv"/>
+                <ImageView
+                    android:id="@+id/home_near_ophthalmology_text_effect_iv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="@id/home_near_ophthalmology_review_exp2_tv"
+                    app:layout_constraintTop_toTopOf="@id/home_near_ophthalmology_review_exp2_tv"
+                    android:src="@drawable/near_ophthalmology_text_effect"
+                    android:layout_marginStart="5sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/home_near_ophthalmology_review_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    tools:listitem="null"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@id/home_near_ophthalmology_review_exp2_tv"/>
+
+                <TextView
+                    android:id="@+id/home_empty_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    app:layout_constraintTop_toBottomOf="@id/home_near_ophthalmology_review_rv"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

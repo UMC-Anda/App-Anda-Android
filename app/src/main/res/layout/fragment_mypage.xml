@@ -3,7 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#EFEFEF">
 
     <ImageView
         android:id="@+id/mypage_background_iv"
@@ -46,6 +47,7 @@
         android:layout_height="wrap_content"
         android:text="avcde@qwer.ccoom"
         android:textSize="10sp"
+        android:textColor="#5C5C5C"
         app:layout_constraintStart_toStartOf="@id/mypage_userinfo_nickname_tv"
         app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_nickname_tv"
         android:layout_marginTop="5sp"/>
@@ -63,33 +65,13 @@
         android:id="@+id/mypage_userinfo_review_useful_cnt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="도움이 되었어요 0 | "
+        android:text="도움이 되었어요 0"
         android:textSize="13sp"
         android:textColor="@color/black"
         app:layout_constraintStart_toEndOf="@id/mypage_userinfo_review_cnt"
         app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_email_tv"
         android:layout_marginTop="5sp"/>
-    <TextView
-        android:id="@+id/mypage_userinfo_review_photo_cnt"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="사진 0"
-        android:textSize="13sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toEndOf="@id/mypage_userinfo_review_useful_cnt"
-        app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_email_tv"
-        android:layout_marginTop="5sp"/>
 
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/menu_mypage"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
 
     <ImageView
         android:id="@+id/mypage_useract_background_iv"
@@ -99,7 +81,7 @@
         android:src="@color/whitegray"
         app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_background_iv"/>
     <ImageView
-        android:id="@+id/mypage_useract_myreview_iv"
+        android:id="@+id/mypage_myreview_iv"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:background="@color/white"
@@ -112,111 +94,68 @@
         android:text="내 리뷰"
         android:textSize="20sp"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@id/mypage_useract_myreview_iv"
-        app:layout_constraintTop_toTopOf="@id/mypage_useract_myreview_iv"
-        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_myreview_iv"/>
+        app:layout_constraintStart_toStartOf="@id/mypage_myreview_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_myreview_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_myreview_iv"/>
     <ImageView
-        android:id="@+id/mypage_useract_myreview_go_iv"
+        android:id="@+id/mypage_myreview_go_iv"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginEnd="50sp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintEnd_toEndOf="@id/mypage_useract_myreview_iv"
-        app:layout_constraintTop_toTopOf="@id/mypage_useract_myreview_iv"
-        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_myreview_iv"/>
+        android:src="@drawable/ic_not_back"
+        app:layout_constraintEnd_toEndOf="@id/mypage_myreview_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_myreview_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_myreview_iv"/>
 
     <ImageView
-        android:id="@+id/mypage_useract_medical_history_iv"
+        android:id="@+id/mypage_mypoint_iv"
         android:layout_width="match_parent"
         android:layout_height="60dp"
         android:layout_marginTop="2dp"
         android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mypage_useract_myreview_iv"/>
+        app:layout_constraintTop_toBottomOf="@id/mypage_myreview_iv"/>
     <TextView
+        android:id="@+id/mypage_mypoint_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="50sp"
-        android:text="내 진료내역"
+        android:text="내 포인트"
         android:textSize="20sp"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@id/mypage_useract_medical_history_iv"
-        app:layout_constraintTop_toTopOf="@id/mypage_useract_medical_history_iv"
-        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_medical_history_iv"/>
-    <ImageView
-        android:id="@+id/mypage_useract_medical_history_go_iv"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="50sp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintEnd_toEndOf="@id/mypage_useract_medical_history_iv"
-        app:layout_constraintTop_toTopOf="@id/mypage_useract_medical_history_iv"
-        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_medical_history_iv"/>
+        app:layout_constraintStart_toStartOf="@id/mypage_mypoint_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_mypoint_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_mypoint_iv"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="20sp"
+        android:text="0P"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/sub_color"
+        app:layout_constraintTop_toTopOf="@id/mypage_mypoint_tv"
+        app:layout_constraintEnd_toStartOf="@id/mypage_mypoint_go_iv"/>
 
     <ImageView
-        android:id="@+id/mypage_useract_reservation_iv"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="2dp"
-        android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mypage_useract_medical_history_iv"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50sp"
-        android:text="내 예약내역"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@id/mypage_useract_reservation_iv"
-        app:layout_constraintTop_toTopOf="@id/mypage_useract_reservation_iv"
-        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_reservation_iv"/>
-    <ImageView
-        android:id="@+id/mypage_useract_reservation_go_iv"
+        android:id="@+id/mypage_mypoint_go_iv"
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginEnd="50sp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintEnd_toEndOf="@id/mypage_useract_reservation_iv"
-        app:layout_constraintTop_toTopOf="@id/mypage_useract_reservation_iv"
-        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_reservation_iv"/>
+        android:src="@drawable/ic_not_back"
+        app:layout_constraintEnd_toEndOf="@id/mypage_mypoint_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_mypoint_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_mypoint_iv"/>
 
-    <ImageView
-        android:id="@+id/mypage_useract_point_iv"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginTop="2dp"
-        android:background="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mypage_useract_reservation_iv"/>
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="50sp"
-        android:text="내 예약내역"
-        android:textSize="20sp"
-        android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="@id/mypage_useract_point_iv"
-        app:layout_constraintTop_toTopOf="@id/mypage_useract_point_iv"
-        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_point_iv"/>
-    <ImageView
-        android:id="@+id/mypage_useract_point_go_iv"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:layout_marginEnd="50sp"
-        android:src="@drawable/ic_back"
-        app:layout_constraintEnd_toEndOf="@id/mypage_useract_point_iv"
-        app:layout_constraintTop_toTopOf="@id/mypage_useract_point_iv"
-        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_point_iv"/>
 
     <ImageView
         android:id="@+id/mypage_useract_invite_iv"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/mypage_useract_point_iv"/>
+        app:layout_constraintTop_toBottomOf="@id/mypage_mypoint_iv"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -230,10 +169,11 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50sp"
+        android:layout_marginEnd="20sp"
         android:text="1,000P 받기"
         android:textSize="18sp"
-        android:textColor="@color/black"
+        android:textColor="@color/sub_color"
+        android:textStyle="bold"
         app:layout_constraintEnd_toStartOf="@id/mypage_useract_invite_go_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_useract_invite_iv"
         app:layout_constraintBottom_toBottomOf="@id/mypage_useract_invite_iv"/>
@@ -242,7 +182,7 @@
         android:layout_width="20dp"
         android:layout_height="20dp"
         android:layout_marginEnd="50sp"
-        android:src="@drawable/ic_back"
+        android:src="@drawable/ic_not_back"
         app:layout_constraintEnd_toEndOf="@id/mypage_useract_invite_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_useract_invite_iv"
         app:layout_constraintBottom_toBottomOf="@id/mypage_useract_invite_iv"/>
@@ -251,7 +191,7 @@
         android:id="@+id/mypage_useract_inquire_iv"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="30dp"
         android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mypage_useract_invite_iv"/>
@@ -267,13 +207,25 @@
         app:layout_constraintBottom_toBottomOf="@id/mypage_useract_inquire_iv"/>
     <ImageView
         android:id="@+id/mypage_useract_inquire_go_iv"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
+        android:layout_width="67dp"
+        android:layout_height="25dp"
         android:layout_marginEnd="50sp"
-        android:src="@drawable/ic_back"
+        android:src="@drawable/go_ask_btn"
         app:layout_constraintEnd_toEndOf="@id/mypage_useract_inquire_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_useract_inquire_iv"
         app:layout_constraintBottom_toBottomOf="@id/mypage_useract_inquire_iv"/>
+
+    <TextView
+        android:id="@+id/mypage_anda_version_info_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="안다 앱 버전 1.10.9 (최신 버전)"
+        android:textColor="#514F4F"
+        android:layout_marginBottom="30dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
 
 
 

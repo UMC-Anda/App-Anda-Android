@@ -7,21 +7,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <TextView
+        android:id="@+id/dictionary_standard_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" "
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+    <TextView
         android:id="@+id/dictionary_dictionary_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dictionary_title"
-        android:textSize="30sp"
+        android:textSize="25sp"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         android:layout_margin="50dp"/>
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dictionary_underbar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="@id/dictionary_dictionary_tv"/>
+
     <TextView
         android:id="@+id/dictionary_dictionary_info_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/dictionary_info"
-        android:textSize="20sp"
+        android:textSize="15sp"
+        android:textColor="@color/black"
         android:gravity="center"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -29,86 +49,34 @@
         android:layout_marginTop="20sp"/>
 
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/dictionary_symptom_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_symptom_btn"
+    <ImageView
+        android:id="@+id/dictionary_symptom_iv"
+        android:layout_width="144dp"
+        android:layout_height="171dp"
+        android:src="@drawable/about_eyes"
+        android:scaleType="centerInside"
         android:layout_marginTop="50sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/dictionary_operation_btn"
+        app:layout_constraintEnd_toStartOf="@id/dictionary_standard_tv"
         app:layout_constraintTop_toBottomOf="@id/dictionary_dictionary_info_tv"/>
-    <TextView
-        android:id="@+id/dictionary_symptom_info_tv"
-        android:layout_width="100sp"
-        android:layout_height="wrap_content"
-        android:text="@string/dictionary_symptom"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@id/dictionary_symptom_btn"
-        app:layout_constraintEnd_toEndOf="@id/dictionary_symptom_btn"
-        app:layout_constraintTop_toTopOf="@id/dictionary_symptom_btn"
-        app:layout_constraintBottom_toBottomOf="@id/dictionary_symptom_btn"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/dictionary_operation_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_operation_btn"
+    <ImageView
+        android:id="@+id/dictionary_operation_iv"
+        android:layout_width="144dp"
+        android:layout_height="171dp"
+        android:src="@drawable/about_treatment"
+        android:scaleType="centerInside"
         android:layout_marginTop="50sp"
-        app:layout_constraintStart_toEndOf="@id/dictionary_symptom_btn"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/dictionary_standard_tv"
         app:layout_constraintTop_toBottomOf="@id/dictionary_dictionary_info_tv"/>
-    <TextView
-        android:id="@+id/dictionary_operation_info_tv"
-        android:layout_width="100sp"
-        android:layout_height="wrap_content"
-        android:text="@string/dictionary_operation"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@id/dictionary_operation_btn"
-        app:layout_constraintEnd_toEndOf="@id/dictionary_operation_btn"
-        app:layout_constraintTop_toTopOf="@id/dictionary_operation_btn"
-        app:layout_constraintBottom_toBottomOf="@id/dictionary_operation_btn"/>
 
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/dictionary_recommend_ophthalmology_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_recommend_ophthalmology"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/dictionary_nothing_btn"
-        app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_btn"/>
-
-    <TextView
-        android:id="@+id/dictionary_recommend_ophthalmology_info_tv"
-        android:layout_width="100sp"
-        android:layout_height="wrap_content"
-        android:text="@string/dictionary_recommend_ophthalmology"
-        android:gravity="center"
-        android:textSize="25sp"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="@id/dictionary_recommend_ophthalmology_btn"
-        app:layout_constraintEnd_toEndOf="@id/dictionary_recommend_ophthalmology_btn"
-        app:layout_constraintTop_toTopOf="@id/dictionary_recommend_ophthalmology_btn"
-        app:layout_constraintBottom_toBottomOf="@id/dictionary_recommend_ophthalmology_btn"/>
-
-
-    <androidx.appcompat.widget.AppCompatImageButton
-        android:id="@+id/dictionary_nothing_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_nothing"
-        app:layout_constraintStart_toEndOf="@id/dictionary_recommend_ophthalmology_btn"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dictionary_operation_btn"/>
-
-
-
-
-
+    <ImageView
+        android:id="@+id/dictionary_prevent_side_effect_iv"
+        android:layout_width="144dp"
+        android:layout_height="171dp"
+        android:scaleType="centerInside"
+        android:src="@drawable/about_side_effect"
+        app:layout_constraintStart_toStartOf="@id/dictionary_symptom_iv"
+        app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_iv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

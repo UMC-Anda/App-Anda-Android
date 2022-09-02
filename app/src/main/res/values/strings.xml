@@ -11,14 +11,15 @@
     <string name="menu_map">지도</string>
     <string name="menu_dictionary">안과백과</string>
     <string name="menu_mypage">마이페이지</string>
-    
-<!--    홈-->
+
+    <!--    홈-->
     <string name="home_info_lasek">#라섹 리뷰 모아보기</string>
     <string name="home_info_lasik">#라식 리뷰 모아보기</string>
     <string name="home_info_ophthalmology">#안과 진료 리뷰 모아보기</string>
-    <string name="home_info_top_ophthalmology">#내 주변 Top 병원(별점 순)</string>
+    <string name="home_info_top_ophthalmology1">#내 주변</string>
+    <string name="home_info_top_ophthalmology2">Top 병원(별점 순)</string>
 
-    
+
     <!--에러처리-->
     <string name="default_fail">네트워크연결이 원활하지 않습니다</string>
 
@@ -61,12 +62,12 @@
 
 
     <!--    증상 카테고리-->
-    <string name="dictionary_symptom_title">증상 카테고리</string>
+    <string name="dictionary_symptom_title">about 眼</string>
 
-<!--    수술 추천-->
-    <string name="dictionary_operation_title">수술 지식</string>
+    <!--    수술 추천-->
+    <string name="dictionary_operation_title">about 교정술</string>
 
-<!--    안과추천-->
-    <string name="dictionary_recommend_ophthalmology_title">안과 추천</string>
+    <!--    안과추천-->
+    <string name="dictionary_recommend_ophthalmology_title">부작용 예방 방법</string>
 
 </resources>

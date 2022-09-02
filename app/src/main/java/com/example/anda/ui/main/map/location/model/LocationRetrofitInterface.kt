@@ -5,6 +5,6 @@ import retrofit2.http.Body
 import retrofit2.http.POST
 
 interface LocationRetrofitInterface {
-    @POST("/app/location/127.033311/37.5611326/5")
+    @POST("/app/location")
     fun postLocation(@Body userinfo : LocationRequestBody): Call<LocationResponse>
 }

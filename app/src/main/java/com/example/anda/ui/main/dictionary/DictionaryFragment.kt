@@ -19,19 +19,19 @@ class DictionaryFragment():Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentDictionaryBinding.inflate(inflater, container, false)
-        binding.dictionarySymptomBtn.setOnClickListener {
+        binding.dictionarySymptomIv.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
                 .replace(R.id.nav_host_fragment_container, SymptomFragment())
                 .commitAllowingStateLoss()
         }
-        binding.dictionaryOperationBtn.setOnClickListener {
+        binding.dictionaryOperationIv.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
                 .replace(R.id.nav_host_fragment_container, OperationFragment())
                 .commitAllowingStateLoss()
         }
-        binding.dictionaryRecommendOphthalmologyBtn.setOnClickListener {
+        binding.dictionaryPreventSideEffectIv.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment_container, RecommendOphthalmologyFragment())
+                .replace(R.id.nav_host_fragment_container, PreventSideEffectFragment())
                 .commitAllowingStateLoss()
         }
 
