@@ -22,15 +22,11 @@ import com.example.anda.ui.main.dictionary.DictionaryFragment
 import com.example.anda.ui.main.home.HomeFragment
 import com.example.anda.ui.main.map.MapFragment
 import com.example.anda.ui.main.mypage.MypageFragment
-import com.example.anda.ui.main.map.location.LocationService
-import com.example.anda.ui.main.map.location.LocationView
-import com.example.anda.ui.main.map.location.model.LocationRequestBody
-import com.example.anda.ui.main.map.location.model.LocationResponse
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 
 
-class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate), LocationView, View.OnClickListener {
+class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
     //위치 권한
     val permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION)
     val PERM_FLAG = 99
@@ -131,81 +127,81 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
     }
 
     //Location Activity
-    lateinit var bindingLocation : FragmentMapBinding
-    lateinit var myLocation : Location
-    override fun onClick(v: View?) {
-        if (v == null) return
-
-        when (v) {
-//            bindingLocation.mapLasekBtn -> findLasek()
-//            bindingLocation.mapLasikBtn -> findLasik()
-//            bindingLocation.mapSmileBtn -> findSmile()
-//            bindingLocation.mapLensBtn -> findLens()
-//            bindingLocation.mapOphthalmologyBtn -> findOphthalmology()
-        }
-    }
-
-    fun findMyLocation(location : Location) {
-        myLocation = location
-        val userinfo = LocationRequestBody(location.longitude.toFloat(), location.latitude.toFloat(), 5f)
-        val service = LocationService(this, userinfo)
-        service.tryLocation()
-    }
-//    private fun findLasek() {
-//        val email = bindingLocation.loginIdEt.text.toString()
-//        val password = bindingLocation.loginPasswordEt.text.toString()
-//        val userinfo = LoginRequestBody(email, password)
+//    lateinit var bindingLocation : FragmentMapBinding
+//    lateinit var myLocation : Location
+//    override fun onClick(v: View?) {
+//        if (v == null) return
 //
-//        val service = LoginService(this, userinfo)
-//        service.tryLogin()
+//        when (v) {
+////            bindingLocation.mapLasekBtn -> findLasek()
+////            bindingLocation.mapLasikBtn -> findLasik()
+////            bindingLocation.mapSmileBtn -> findSmile()
+////            bindingLocation.mapLensBtn -> findLens()
+////            bindingLocation.mapOphthalmologyBtn -> findOphthalmology()
+//        }
 //    }
-//    private fun findLasik() {
-//        val email = bindingLocation.loginIdEt.text.toString()
-//        val password = bindingLocation.loginPasswordEt.text.toString()
-//        val userinfo = LoginRequestBody(email, password)
 //
-//        val service = LoginService(this, userinfo)
-//        service.tryLogin()
+//    fun findMyLocation(location : Location) {
+//        myLocation = location
+//        val userinfo = LocationRequestBody(location.longitude.toFloat(), location.latitude.toFloat(), 5f)
+//        val service = LocationService(this, userinfo)
+//        service.tryLocation()
 //    }
-//    private fun findSmile() {
-//        val email = bindingLocation.loginIdEt.text.toString()
-//        val password = bindingLocation.loginPasswordEt.text.toString()
-//        val userinfo = LoginRequestBody(email, password)
+////    private fun findLasek() {
+////        val email = bindingLocation.loginIdEt.text.toString()
+////        val password = bindingLocation.loginPasswordEt.text.toString()
+////        val userinfo = LoginRequestBody(email, password)
+////
+////        val service = LoginService(this, userinfo)
+////        service.tryLogin()
+////    }
+////    private fun findLasik() {
+////        val email = bindingLocation.loginIdEt.text.toString()
+////        val password = bindingLocation.loginPasswordEt.text.toString()
+////        val userinfo = LoginRequestBody(email, password)
+////
+////        val service = LoginService(this, userinfo)
+////        service.tryLogin()
+////    }
+////    private fun findSmile() {
+////        val email = bindingLocation.loginIdEt.text.toString()
+////        val password = bindingLocation.loginPasswordEt.text.toString()
+////        val userinfo = LoginRequestBody(email, password)
+////
+////        val service = LoginService(this, userinfo)
+////        service.tryLogin()
+////    }
+////    private fun findOphthalmology() {
+////        val email = bindingLocation.loginIdEt.text.toString()
+////        val password = bindingLocation.loginPasswordEt.text.toString()
+////        val userinfo = LoginRequestBody(email, password)
+////
+////        val service = LoginService(this, userinfo)
+////        service.tryLogin()
+////    }
+////    private fun findLens() {
+////        val email = bindingLocation.loginIdEt.text.toString()
+////        val password = bindingLocation.loginPasswordEt.text.toString()
+////        val userinfo = LoginRequestBody(email, password)
+////
+////        val service = LoginService(this, userinfo)
+////        service.tryLogin()
+////    }
 //
-//        val service = LoginService(this, userinfo)
-//        service.tryLogin()
+//    override fun onLocationLoading() {
+//        bindingLocation.mapLoadingPb.visibility = View.VISIBLE
 //    }
-//    private fun findOphthalmology() {
-//        val email = bindingLocation.loginIdEt.text.toString()
-//        val password = bindingLocation.loginPasswordEt.text.toString()
-//        val userinfo = LoginRequestBody(email, password)
 //
-//        val service = LoginService(this, userinfo)
-//        service.tryLogin()
-//    }
-//    private fun findLens() {
-//        val email = bindingLocation.loginIdEt.text.toString()
-//        val password = bindingLocation.loginPasswordEt.text.toString()
-//        val userinfo = LoginRequestBody(email, password)
 //
-//        val service = LoginService(this, userinfo)
-//        service.tryLogin()
+//    override fun onLocationSuccess(response: LocationResponse) {
+//        bindingLocation.mapLoadingPb.visibility = View.GONE
+//        Log.d("위치찾기", "성공!")
 //    }
-
-    override fun onLocationLoading() {
-        bindingLocation.mapLoadingPb.visibility = View.VISIBLE
-    }
-
-
-    override fun onLocationSuccess(response: LocationResponse) {
-        bindingLocation.mapLoadingPb.visibility = View.GONE
-        Log.d("위치찾기", "성공!")
-    }
-
-    override fun onLocationFailure(code: Int, message: String) {
-        Log.d("위치찾기", "실패!")
-        bindingLocation.mapLoadingPb.visibility = View.GONE
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
-    }
+//
+//    override fun onLocationFailure(code: Int, message: String) {
+//        Log.d("위치찾기", "실패!")
+//        bindingLocation.mapLoadingPb.visibility = View.GONE
+//        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
+//    }
 
 }

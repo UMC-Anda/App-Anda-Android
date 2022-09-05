@@ -22,6 +22,12 @@ class DictionaryFragment():Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         binding = FragmentDictionaryBinding.inflate(inflater, container, false)
+        settingSetOnClick()
+
+        return binding.root
+    }
+
+    private fun settingSetOnClick() {
         binding.dictionarySymptomIv.setOnClickListener {
             (context as MainActivity).supportFragmentManager.beginTransaction()
                 .replace(R.id.nav_host_fragment_container, SymptomFragment())
@@ -37,7 +43,5 @@ class DictionaryFragment():Fragment() {
                 .replace(R.id.nav_host_fragment_container, PreventSideEffectFragment())
                 .commitAllowingStateLoss()
         }
-
-        return binding.root
     }
 }

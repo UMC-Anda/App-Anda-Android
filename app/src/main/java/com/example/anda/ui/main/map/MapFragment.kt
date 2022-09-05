@@ -1,13 +1,29 @@
 package com.example.anda.ui.main.map
 
 
+import android.annotation.SuppressLint
+import android.location.Location
 import android.os.Bundle
+import android.os.Looper
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.anda.R
+import com.example.anda.databinding.FragmentDictionaryBinding
+import com.example.anda.databinding.FragmentMapBinding
+import com.example.anda.ui.main.MainActivity
+import com.example.anda.ui.main.dictionary.symptom.SymptomFragment
+import com.example.anda.ui.main.home.AddReviewFragment
+import com.google.android.gms.location.FusedLocationProviderClient
+import com.google.android.gms.location.LocationCallback
+import com.google.android.gms.location.LocationRequest
+import com.google.android.gms.location.LocationResult
 import com.google.android.gms.maps.*
+import com.google.android.gms.maps.model.CameraPosition
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 
 
 class MapFragment() : Fragment(),OnMapReadyCallback {
@@ -15,7 +31,8 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
     private lateinit var mMap : GoogleMap
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
+        inflater: LayoutInflater,
+        container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         val rootView = inflater.inflate(R.layout.fragment_map,container,false)
@@ -29,8 +46,9 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
     //지도 객체를 사용할 수 있을 때 자동으로 호출되는 함수
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        //fusedLocationClient = (activity as MainActivity).getFusedLocation()
-        //setUpdateLocationLister()
+        fusedLocationClient = (activity as MainActivity).getFusedLocation()
+
+        setUpdateLocationListener()
     }
     override fun onStart() {
         super.onStart()
@@ -60,12 +78,12 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
         super.onDestroy()
         mapView.onDestroy()
     }
-/*
-    lateinit var fusedLocationClient:FusedLocationProviderClient
+
+    lateinit var fusedLocationClient: FusedLocationProviderClient
     lateinit var locationCallback: LocationCallback
 
     @SuppressLint("MissingPermission")
-    fun setUpdateLocationLister(){
+    fun setUpdateLocationListener(){
         val locationRequest = LocationRequest.create()
         locationRequest.run {
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
@@ -75,7 +93,6 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
                 locationResult?.let {
                     for ((i, location) in it.locations.withIndex()) {
                         Log.d("로케이션", "$i ${location.latitude}, ${location.longitude}")
-                        (activity as MainActivity).findMyLocation(location)
                         setLastLocation(location)
                     }
                 }
@@ -86,13 +103,16 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
     }
 
     fun setLastLocation(location : Location){
+        val ExLocation = LatLng(location.latitude + 0.001, location.longitude + 0.001)
         val myLocation = LatLng(location.latitude, location.longitude)
-        val markerOptions = MarkerOptions().position(myLocation).title("내 위치")
+        val markerOptions = MarkerOptions().position(ExLocation).title("병원위치(예시)")
         val cameraOption = CameraPosition.Builder().target(myLocation).zoom(15.0f).build()
         val camera = CameraUpdateFactory.newCameraPosition(cameraOption)
 
+        @SuppressLint("MissingPermission")
+        mMap.isMyLocationEnabled = true
         mMap.addMarker(markerOptions)
         mMap.moveCamera(camera)
     }
-*/
+
 }
