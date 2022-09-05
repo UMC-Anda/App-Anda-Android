@@ -3,7 +3,6 @@ package com.example.anda.ui.main.home
 import android.graphics.Typeface
 import android.text.SpannableString
 import android.text.Spanned
-import android.text.style.ForegroundColorSpan
 import android.text.style.StyleSpan
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -16,7 +15,6 @@ import com.example.anda.data.entities.ReviewOphthalmology
 import com.example.anda.databinding.FragmentHomeBinding
 import com.example.anda.ui.BaseFragment
 import com.example.anda.ui.main.MainActivity
-import com.example.anda.ui.main.dictionary.SymptomFragment
 
 
 class HomeFragment(): BaseFragment<FragmentHomeBinding>(FragmentHomeBinding::inflate) {

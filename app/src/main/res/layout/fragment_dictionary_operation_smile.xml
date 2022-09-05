@@ -1,28 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/operation_smile_title_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_content_background"
-        android:layout_marginTop="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/operation_smile_title_tv"/>
-    <TextView
-        android:id="@+id/operation_smile_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="스마일 라식"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/operation_smile_title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dictionary_content_background"
+            android:layout_marginTop="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/operation_smile_title_tv"/>
+        <TextView
+            android:id="@+id/operation_smile_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="스마일 라식"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <ImageView
+            android:id="@+id/operation_smile_way_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/operation_way"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_smile_title_iv"/>
+        <TextView
+            android:id="@+id/operation_smile_way_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text= "각막 표면(상피)의 손상을 최소화하여 각막 실질만을 깎는 방법"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_smile_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_smile_way_iv"/>
+
+        <ImageView
+            android:id="@+id/operation_smile_pros_and_cons_iv"
+            android:layout_width="205dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/operation_pros_and_cons"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_smile_way_content_tv" />
+        <TextView
+            android:id="@+id/operation_smile_pros_and_cons_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="장점 : 빠른 회복 속도(1차 회복 4시간), 외상에\n          강함
+            \n단점 : 원시인 경우 수술 불가(원시는 라식, 라섹)"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_smile_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_smile_pros_and_cons_iv"/>
+        <ImageView
+            android:id="@+id/operation_smile_characteristic_iv"
+            android:layout_width="280dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/operation_recommend_timing"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_smile_pros_and_cons_content_tv"/>
+        <TextView
+            android:id="@+id/operation_smile_characteristic_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ㆍ 스마일 라식은 수술 후 관리가 가장 쉬움
+            \nㆍ 수술 당일
+            \nㆍ 수술 후 일주일 이내
+            \nㆍ 수술 후 한달 뒤
+            \nㆍ 6개월 or 1년 뒤"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_smile_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_smile_characteristic_iv"/>
+
+
+        <ImageView
+            android:id="@+id/operation_smile_recommend_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/operation_recommend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_smile_characteristic_content_tv" />
+        <TextView
+            android:id="@+id/operation_smile_recommend_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text=" 모든 수술이 가능하다면 스마일 라식 추천"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_smile_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_smile_recommend_iv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

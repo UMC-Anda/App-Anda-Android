@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/side_effect_common_title_iv"
@@ -26,4 +30,32 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        내용-->
+        <ImageView
+            android:id="@+id/side_effect_common_way_content_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/operation_way"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/side_effect_common_title_iv"/>
+        <TextView
+            android:id="@+id/side_effect_common_way_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="ㆍ 본인에게 적합한 수술 방법 선택
+            \nㆍ 안과에 방문하며 주기적이고 체계적으로 관리\n    (수술 후 6개월이 골든타임)
+            \nㆍ 믿을 수 있는 병원에서 의사와의 충분함 상담
+            \nㆍ 꾸준히 안약 점안
+            \nㆍ 눈 오랫동안 비비거나 누르기 금지 \n    (세게 감는 것 포함)
+            \nㆍ 흡연은 안구건조증 유발
+            \nㆍ 음주는 각막 회복 지연"
+            android:textStyle="bold"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/side_effect_common_way_content_iv"
+            app:layout_constraintTop_toBottomOf="@id/side_effect_common_way_content_iv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

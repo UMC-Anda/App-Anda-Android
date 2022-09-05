@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_nearsighted_title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dictionary_content_background"
+            android:layout_marginTop="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dictionary_symptom_nearsighted_title_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_nearsighted_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="근시"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+<!--        내용-->
+        <ImageView
+            android:id="@+id/dictionary_symptom_nearsighted_define_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/symptom_define"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_nearsighted_title_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_nearsighted_define_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 안구가 길어서 초점이 망막 앞에 맺히는 질환\nㆍ 먼 곳이 잘 안 보이고 가까운 곳이 잘 보임"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_nearsighted_define_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_nearsighted_define_iv"/>
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_nearsighted_reason_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_reason"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_nearsighted_define_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_nearsighted_reason_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 유전적으로 안구가 길어 나타나는 선천적인 \n    근시\nㆍ 영양적 요인 : 과인슐린혈증 등 영양적인 \n    불균형으로 인한 근시\nㆍ 환경적 요인 : 스마트폰, 독서, TV 시청 등 \n    과도한 근거리 작업이나 스트레스 등으로 \n    인한 근시"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_nearsighted_reason_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_nearsighted_reason_iv"/>
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_nearsighted_treatment_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_treatment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_nearsighted_reason_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_nearsighted_treatment_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 안경이나 콘택트 렌즈 등을 착용하여 망막에 \n    정확하게 상이 맺히도록 교정\nㆍ 라식, 라섹, 인공수정체 삽입술 등 수술적인 \n    치료"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_nearsighted_treatment_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_nearsighted_treatment_iv"/>
+        <ImageView
+            android:id="@+id/dictionary_symptom_nearsighted_progress_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_nearsighted_treatment_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_nearsighted_progress_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 근시 환자에게 시야에 검은 점이 떠다니는 \n    비문증이 생겼다면 안과 진료 필수"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_nearsighted_progress_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_nearsighted_progress_iv"/>
+        <ImageView
+            android:id="@+id/dictionary_symptom_nearsighted_warning_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_warning"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_nearsighted_progress_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_nearsighted_warning_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 6개월에 한 번씩은 안과를 방문하여 안경이나 \n    렌즈 도수가 적당한지 확인 필요"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_nearsighted_warning_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_nearsighted_warning_iv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

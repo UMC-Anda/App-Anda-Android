@@ -1,30 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/operation_lens_title_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_content_background"
-        android:layout_marginTop="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/operation_lens_title_tv"/>
-    <TextView
-        android:id="@+id/operation_lens_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="스마일 라식"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <ImageView
+            android:id="@+id/operation_lens_title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dictionary_content_background"
+            android:layout_marginTop="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/operation_lens_title_tv"/>
+        <TextView
+            android:id="@+id/operation_lens_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="렌즈 삽입술"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!--        내용-->
+        <ImageView
+            android:id="@+id/operation_lens_way_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/operation_way"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_lens_title_iv"/>
+        <TextView
+            android:id="@+id/operation_lens_way_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 렌즈를 삽입하는 방법
+    "
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_lens_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_lens_way_iv"/>
+        <ImageView
+            android:id="@+id/operation_lens_characteristic_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/operation_characteristic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_lens_way_content_tv"/>
+        <TextView
+            android:id="@+id/operation_lens_characteristic_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 도수(눈이 얼마나 나쁜지)와 상관없이 위험도\n일정"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_lens_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_lens_characteristic_iv"/>
+
+
+        <ImageView
+            android:id="@+id/operation_lens_recommend_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/operation_recommend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_lens_characteristic_content_tv" />
+        <TextView
+            android:id="@+id/operation_lens_recommend_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text=" 시력이 많이 나쁜 경우라면 렌즈 삽입술 추천"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_lens_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_lens_recommend_iv"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

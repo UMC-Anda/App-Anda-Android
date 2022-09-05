@@ -1,8 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <ImageView
         android:id="@+id/side_effect_smile_title_iv"
@@ -25,4 +30,51 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <!--        내용-->
+        <ImageView
+            android:id="@+id/side_effect_smile_lifestyle_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/side_effect_lifestyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/side_effect_smile_title_tv"/>
+        <TextView
+            android:id="@+id/side_effect_smile_lifestyle_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 세안, 샤워, 머리감기 다음날부터 가능
+            \nㆍ 간단한 운동(조깅 등)은 다음날부터 가능
+            \nㆍ 접촉이 많은 운동(축구, 수영 등)은 1주일 \n    후부터 가능
+            \nㆍ 색조 화장은 다음잘부터 가능\nㆍ 아이라이너와 마스카라는 1주일 후 부터 가능
+            \nㆍ 1주일 간 금주"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/side_effect_smile_lifestyle_iv"
+            app:layout_constraintTop_toBottomOf="@id/side_effect_smile_lifestyle_iv"/>
+
+        <ImageView
+            android:id="@+id/side_effect_smile_task_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/side_effect_task"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/side_effect_smile_lifestyle_content_tv"/>
+        <TextView
+            android:id="@+id/side_effect_smile_task_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 모니터 업무는 1~2주 후부터 가능\nㆍ 멀리 작은 글씨를 보는 업무는 한 달 후 부터\n    가능"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/side_effect_smile_task_iv"
+            app:layout_constraintTop_toBottomOf="@id/side_effect_smile_task_iv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

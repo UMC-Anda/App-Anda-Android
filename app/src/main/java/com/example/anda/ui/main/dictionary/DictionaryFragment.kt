@@ -8,6 +8,9 @@ import androidx.fragment.app.Fragment
 import com.example.anda.R
 import com.example.anda.databinding.FragmentDictionaryBinding
 import com.example.anda.ui.main.MainActivity
+import com.example.anda.ui.main.dictionary.operation.OperationFragment
+import com.example.anda.ui.main.dictionary.side_effect.PreventSideEffectFragment
+import com.example.anda.ui.main.dictionary.symptom.SymptomFragment
 
 
 class DictionaryFragment():Fragment() {

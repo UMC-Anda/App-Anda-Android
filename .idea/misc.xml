@@ -31,8 +31,22 @@
         <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/activity_splash.xml" value="0.2672239108409321" />
         <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary.xml" value="0.2703804347826087" />
         <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation.xml" value="0.2703804347826087" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_lasek.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_laser.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_lasik.xml" value="0.46734059097978226" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_lens.xml" value="0.33" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_smile.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_prevent_side_effect.xml" value="0.31302083333333336" />
         <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_recommend_ophthalmology.xml" value="0.2703804347826087" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_side_effect_common.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_side_effect_lasek.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_side_effect_lasik.xml" value="0.31302083333333336" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_side_effect_smile.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_symptom.xml" value="0.2703804347826087" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_symptom_astigmatism.xml" value="0.45253863134657835" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_symptom_farsighted.xml" value="0.5" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_symptom_nearsighted.xml" value="0.42008196721311475" />
+        <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_symptom_presbyopia.xml" value="0.45253863134657835" />
         <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_home.xml" value="0.5" />
         <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_home_add_review.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/yacka/AndroidStudioProjects/app-ANDA-android/app/src/main/res/layout/fragment_home_banner.xml" value="0.2703804347826087" />

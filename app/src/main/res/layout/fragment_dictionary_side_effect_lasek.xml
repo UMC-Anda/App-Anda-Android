@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
 <ImageView
         android:id="@+id/side_effect_lasek_title_iv"
@@ -26,4 +30,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+        <!--        내용-->
+        <ImageView
+            android:id="@+id/side_effect_lasek_lifestyle_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/side_effect_lifestyle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/side_effect_lasek_title_tv"/>
+        <TextView
+            android:id="@+id/side_effect_lasek_lifestyle_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ보호렌즈 착용(3 ~ 7일)
+            \nㆍ 혼탁방지를 위한 선글라스(블루라이트 \n    차단 안경 가능) 착용 권장(2개월 ~ 6개월)
+            \nㆍ 흡연 : 1주일 후부터 가능, 밀폐된 공간에서의 \n    흡연 자제
+            \nㆍ 세안, 샤워, 머리감기는 보호렌즈 제거 후부터\n    (약 1주일) 가능
+            \nㆍ 간단한 운동(조깅 등)은 눈이 편안해진 \n    이후부터 (약 3일) 가능
+            \nㆍ 접촉이 많은 운동(축구, 수영 등)은 한달 후부터\n    가능
+            \nㆍ 색조 화장은 1주일 후 부터 가능
+            \nㆍ 아이라이너와 마스카라는 2주 후부터 가능"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/side_effect_lasek_lifestyle_iv"
+            app:layout_constraintTop_toBottomOf="@id/side_effect_lasek_lifestyle_iv"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

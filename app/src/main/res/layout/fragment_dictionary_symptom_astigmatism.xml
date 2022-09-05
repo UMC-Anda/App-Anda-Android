@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_astigmatism_title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dictionary_content_background"
+            android:layout_marginTop="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dictionary_symptom_astigmatism_title_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_astigmatism_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="난시"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!--        내용-->
+        <ImageView
+            android:id="@+id/dictionary_symptom_astigmatism_define_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/symptom_define"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_astigmatism_title_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_astigmatism_define_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 안구 표면이 고르지 못하여 눈으로 들어온 빛이 \n    한 점에서 초점을 맺지 못하는 질환
+\nㆍ 각막 표면이 불규칙하여 사물이 뚜렷하게\n    보이지 않고 흐릿하게 보임
+\nㆍ 심하면 눈의 피로와 함께 두통이 동반되기도 함"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_astigmatism_define_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_astigmatism_define_iv"/>
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_astigmatism_reason_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_reason"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_astigmatism_define_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_astigmatism_reason_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 정확한 원인은 밝혀지지 않고 추정만 존재
+\nㆍ 유전적 요인 : 유전으로 인한 선천적인 난시
+\nㆍ 후천적 요인 : 안과 수술 등 외부 요인으로 \n    인한 난시 "
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_astigmatism_reason_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_astigmatism_reason_iv"/>
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_astigmatism_treatment_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_treatment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_astigmatism_reason_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_astigmatism_treatment_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 안경이나 콘택트 렌즈 등을 착용하여 망막에 \n    상이 맺히도록 교정
+\nㆍ 라식, 라섹 등 수술적인 치료"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_astigmatism_treatment_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_astigmatism_treatment_iv"/>
+        <ImageView
+            android:id="@+id/dictionary_symptom_astigmatism_progress_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_astigmatism_treatment_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_astigmatism_progress_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 특별한 합병증은 없음"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_astigmatism_progress_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_astigmatism_progress_iv"/>
+        <ImageView
+            android:id="@+id/dictionary_symptom_astigmatism_warning_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_warning"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_astigmatism_progress_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_astigmatism_warning_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 어두운 곳이나 흔들리는 차 안에서 독서하는\n    것 피하기
+\nㆍ 장시간 근거리 작업 피하기"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_astigmatism_warning_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_astigmatism_warning_iv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

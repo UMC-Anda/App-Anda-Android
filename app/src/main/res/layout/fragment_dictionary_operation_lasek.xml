@@ -1,29 +1,111 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/operation_lasek_title_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_content_background"
-        android:layout_marginTop="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/operation_lasek_title_tv"/>
-    <TextView
-        android:id="@+id/operation_lasek_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="라섹"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/operation_lasek_title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dictionary_content_background"
+            android:layout_marginTop="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/operation_lasek_title_tv"/>
+        <TextView
+            android:id="@+id/operation_lasek_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="라섹"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+<!--        내용-->
+        <ImageView
+            android:id="@+id/operation_lasek_way_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/operation_way"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_lasek_title_iv"/>
+        <TextView
+            android:id="@+id/operation_lasek_way_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 각막 표면(상피)를 얇게 제거하고 레이저로 각막 실질을 깎은 다음 자연 재생되는 원리를 이용한\n방법"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_lasek_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_lasek_way_iv"/>
+        <ImageView
+            android:id="@+id/operation_lasek_characteristic_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/operation_characteristic"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_lasek_way_content_tv"/>
+        <TextView
+            android:id="@+id/operation_lasek_characteristic_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text=" 아픔이 심하지만 외상이 강함"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_lasek_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_lasek_characteristic_iv"/>
+
+        <ImageView
+            android:id="@+id/operation_lasek_pros_and_cons_iv"
+            android:layout_width="205dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/operation_pros_and_cons"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_lasek_characteristic_content_tv" />
+        <TextView
+            android:id="@+id/operation_lasek_pros_and_cons_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text="장점: 라식보다 외상에 강함\n단점: 회복 기간이 길고 합병증의 우려\n         (긁어낸 부위 재생 기간은 2일 ~ 5일\n          시력안정은 3주 정도)"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_lasek_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_lasek_pros_and_cons_iv"/>
+
+        <ImageView
+            android:id="@+id/operation_lasek_recommend_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/operation_recommend"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_lasek_pros_and_cons_content_tv" />
+        <TextView
+            android:id="@+id/operation_lasek_recommend_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="15sp"
+            android:text=" 취미나 직업 등으로 외상을 입을 수 있는 상황이라면, 라섹 추천"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_lasek_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_lasek_recommend_iv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

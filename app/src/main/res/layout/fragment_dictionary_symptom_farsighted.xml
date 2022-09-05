@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_farsighted_title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dictionary_content_background"
+            android:layout_marginTop="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dictionary_symptom_farsighted_title_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_farsighted_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="원시"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <!--        내용-->
+        <ImageView
+            android:id="@+id/dictionary_symptom_farsighted_define_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/symptom_define"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_farsighted_title_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_farsighted_define_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 안구가 작아서 초점이 망막 뒤에 맺히는 질환
+\nㆍ 가까운 곳이 잘 안 보이고 먼 곳이 잘 보임"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_farsighted_define_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_farsighted_define_iv"/>
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_farsighted_reason_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_reason"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_farsighted_define_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_farsighted_reason_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 유전적 요인 : 유전적으로 안구가 짧아 나타나는\n    선천적인 원시
+\nㆍ 외부적 요인 : 안질환, 안외상에 의해 생기는\n    원시"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_farsighted_reason_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_farsighted_reason_iv"/>
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_farsighted_treatment_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_treatment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_farsighted_reason_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_farsighted_treatment_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 경도의 원시에서 시력저하나 눈피로 증상이\n    없다면 꼭 교정할 필요 없음
+\nㆍ 중등도 이상의 원시로 시력저하를 일으키는\n    등의 문제가 있다면 안경이나 콘택트 렌즈 등을\n    삽입하여 교정
+"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_farsighted_treatment_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_farsighted_treatment_iv"/>
+        <ImageView
+            android:id="@+id/dictionary_symptom_farsighted_progress_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_farsighted_treatment_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_farsighted_progress_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 대개 7세까지는 원시가 진행할 수 있으며,\n    7세 이후 성인기까지 점차적으로 원시가\n    감소하거나 근시로 진행
+\nㆍ 소아에서 증등도 이상의 원시를 교정하지\n    않으면 약시나 사시가 발생할 수 있으므로\n    안경으로 교정 필요
+"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_farsighted_progress_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_farsighted_progress_iv"/>
+        <ImageView
+            android:id="@+id/dictionary_symptom_farsighted_warning_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_warning"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_farsighted_progress_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_farsighted_warning_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 소아의 경우 4-6개월에 한 번씩 정기적으로\n    검사하여 안경을 처방하거나 안경도수 변경 \n    필요"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_farsighted_warning_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_farsighted_warning_iv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

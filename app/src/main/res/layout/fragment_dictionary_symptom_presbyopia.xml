@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_presbyopia_title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dictionary_content_background"
+            android:layout_marginTop="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/dictionary_symptom_presbyopia_title_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_presbyopia_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="노안"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+
+        <!--        내용-->
+        <ImageView
+            android:id="@+id/dictionary_symptom_presbyopia_define_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/symptom_define"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_presbyopia_title_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_presbyopia_define_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 나이가 들수록 가까이에 있는 물체에 초점을 \n    맞추는 능력이 떨어지는 상태\nㆍ 수정체의 노화에 따른 눈의 장애 현상\nㆍ 어두운 곳에서 책을 보거나 작은 글자를 볼 때\n    눈이 쉽게 피로해지고 두통이 옴\nㆍ 멀리 있는 물체는 잘 보임"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_presbyopia_define_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_presbyopia_define_iv"/>
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_presbyopia_reason_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_reason"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_presbyopia_define_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_presbyopia_reason_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 나이가 들수록 안구의 조절력이 감소하여 발생\nㆍ 나이가 들면서 수정체의 탄력성이 떨어짐에 \n    따라 발생"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_presbyopia_reason_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_presbyopia_reason_iv"/>
+
+        <ImageView
+            android:id="@+id/dictionary_symptom_presbyopia_treatment_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_treatment"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_presbyopia_reason_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_presbyopia_treatment_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 근거리 사물이 흐릿하게 보인다면 시력 정밀 \n    검사 필요\nㆍ 가까운 물체를 볼 때마다 돋보기(볼록렌즈)\n    사용\nㆍ 이중초점렌즈, 다초점렌즈를 사용하여\n    시력 교정\nㆍ 노안 교정 수술을 통한 수술적인 치료"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_presbyopia_treatment_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_presbyopia_treatment_iv"/>
+        <ImageView
+            android:id="@+id/dictionary_symptom_presbyopia_progress_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_progress"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_presbyopia_treatment_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_presbyopia_progress_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 40대 중반에 시작되며, 50대 후반 이후부터는 \n    더 이상 진행되지 않는 경향 존재"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_presbyopia_progress_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_presbyopia_progress_iv"/>
+        <ImageView
+            android:id="@+id/dictionary_symptom_presbyopia_warning_iv"
+            android:layout_width="150dp"
+            android:layout_height="23dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="30dp"
+            android:src="@drawable/symptom_warning"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/dictionary_symptom_presbyopia_progress_content_tv"/>
+        <TextView
+            android:id="@+id/dictionary_symptom_presbyopia_warning_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="ㆍ 근시가 있는 사람은 노안이 생겼을 때 오히려 \n    시력이 좋아지는 것처럼 느껴질 수 있지만 \n    노화로 인한 수정체의 조절력 저하는 같음"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/dictionary_symptom_presbyopia_warning_iv"
+            app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_presbyopia_warning_iv"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

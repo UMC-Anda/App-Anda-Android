@@ -1,29 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <ImageView
-        android:id="@+id/operation_laser_title_iv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_content_background"
-        android:layout_marginTop="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@id/operation_laser_title_tv"/>
-    <TextView
-        android:id="@+id/operation_laser_title_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="레이저 종류"
-        android:textSize="25sp"
-        android:textStyle="bold"
-        android:textColor="@color/black"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/operation_laser_title_iv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/dictionary_content_background"
+            android:layout_marginTop="20sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/operation_laser_title_tv"/>
+        <TextView
+            android:id="@+id/operation_laser_title_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:text="레이저 종류"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <!--        내용-->
+        <ImageView
+            android:id="@+id/operation_laser_excimer_laser_iv"
+            android:layout_width="300dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/operation_laser_excimer_laser"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_laser_title_tv"/>
+        <TextView
+            android:id="@+id/operation_laser_excimer_laser_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="*자외선 에너지 사용\n*고출력의 에너지를 미세하고 작게 모을 수 있음  \n*원하는 만큼 정확한 수술 가능"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_laser_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_laser_excimer_laser_iv"/>
+
+        <ImageView
+            android:id="@+id/operation_laser_femtosecond_laser_iv"
+            android:layout_width="350dp"
+            android:layout_height="23dp"
+            android:layout_marginTop="50dp"
+            android:src="@drawable/operation_laser_femtosecond_laser"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/operation_laser_excimer_laser_tv"/>
+        <TextView
+            android:id="@+id/operation_laser_way_content_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="*조직을 투과하여 원하는 깊이에만 열 에너지 전달 가능\n*각막 손상을 최소화하며 수술 가능"
+            android:textSize="15sp"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            app:layout_constraintStart_toStartOf="@id/operation_laser_title_iv"
+            app:layout_constraintTop_toBottomOf="@id/operation_laser_femtosecond_laser_iv"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
