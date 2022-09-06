@@ -11,6 +11,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.anda.R
+import com.example.anda.data.entities.MapList
+import com.example.anda.data.entities.ReviewLasek
 import com.example.anda.ui.main.MainActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
@@ -36,6 +38,9 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
         mapView = rootView.findViewById(R.id.mapFragment) as MapView
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
+
+
+
 
         return rootView
     }
@@ -102,7 +107,7 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
     fun setLastLocation(location : Location){
         val ExLocation = LatLng(location.latitude + 0.001, location.longitude + 0.001)
         val myLocation = LatLng(location.latitude, location.longitude)
-        val markerOptions = MarkerOptions().position(ExLocation).title("병원위치(예시)")
+        val markerOptions = MarkerOptions().position(ExLocation).title("병원위치(예시)").alpha(0.5f)
         val cameraOption = CameraPosition.Builder().target(myLocation).zoom(15.0f).build()
         val camera = CameraUpdateFactory.newCameraPosition(cameraOption)
 

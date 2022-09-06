@@ -23,4 +23,8 @@
 
     <!-- 로그인 -->
     <color name="login_button">#AECD8E</color>
+
+<!--    마이페이지-->
+    <color name="mypage_color">#978C8C</color>
+
 </resources>

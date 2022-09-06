@@ -36,6 +36,7 @@
         android:layout_height="wrap_content"
         android:text="닉네임"
         android:textSize="20sp"
+        android:textStyle="bold"
         android:textColor="@color/black"
         android:layout_marginStart="20sp"
         app:layout_constraintStart_toEndOf="@id/mypage_userinfo_profile_iv"
@@ -77,7 +78,7 @@
         android:id="@+id/mypage_useract_background_iv"
         android:layout_width="match_parent"
         android:layout_height="246dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="12dp"
         android:src="@color/whitegray"
         app:layout_constraintTop_toBottomOf="@id/mypage_userinfo_background_iv"/>
     <ImageView
@@ -92,8 +93,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50sp"
         android:text="내 리뷰"
-        android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textColor="@color/mypage_color"
         app:layout_constraintStart_toStartOf="@id/mypage_myreview_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_myreview_iv"
         app:layout_constraintBottom_toBottomOf="@id/mypage_myreview_iv"/>
@@ -104,6 +105,16 @@
         android:layout_marginEnd="50sp"
         android:src="@drawable/ic_not_back"
         app:layout_constraintEnd_toEndOf="@id/mypage_myreview_iv"
+        app:layout_constraintTop_toTopOf="@id/mypage_myreview_iv"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_myreview_iv"/>
+
+    <ImageView
+        android:id="@+id/mypage_first_review_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10sp"
+        android:src="@drawable/mypage_first_review"
+        app:layout_constraintEnd_toStartOf="@id/mypage_myreview_go_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_myreview_iv"
         app:layout_constraintBottom_toBottomOf="@id/mypage_myreview_iv"/>
 
@@ -121,15 +132,15 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50sp"
         android:text="내 포인트"
-        android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textColor="@color/mypage_color"
         app:layout_constraintStart_toStartOf="@id/mypage_mypoint_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_mypoint_iv"
         app:layout_constraintBottom_toBottomOf="@id/mypage_mypoint_iv"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20sp"
+        android:layout_marginEnd="10sp"
         android:text="0P"
         android:textStyle="bold"
         android:textSize="18sp"
@@ -152,28 +163,31 @@
         android:id="@+id/mypage_useract_invite_iv"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="12dp"
         android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mypage_mypoint_iv"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="50sp"
+        android:layout_marginStart="48dp"
         android:text="친구 초대하기"
-        android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textColor="@color/mypage_color"
+        android:textSize="17sp"
+        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_invite_iv"
         app:layout_constraintStart_toStartOf="@id/mypage_useract_invite_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_useract_invite_iv"
-        app:layout_constraintBottom_toBottomOf="@id/mypage_useract_invite_iv"/>
-    <TextView
+        app:layout_constraintVertical_bias="0.393" />
+
+    <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="20sp"
-        android:text="1,000P 받기"
+        android:layout_marginEnd="10sp"
         android:textSize="18sp"
         android:textColor="@color/sub_color"
         android:textStyle="bold"
+        android:src="@drawable/mypage_recv_1000"
         app:layout_constraintEnd_toStartOf="@id/mypage_useract_invite_go_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_useract_invite_iv"
         app:layout_constraintBottom_toBottomOf="@id/mypage_useract_invite_iv"/>
@@ -191,7 +205,7 @@
         android:id="@+id/mypage_useract_inquire_iv"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="12dp"
         android:background="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/mypage_useract_invite_iv"/>
@@ -200,17 +214,17 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50sp"
         android:text="문의하기"
-        android:textSize="20sp"
-        android:textColor="@color/black"
+        android:textSize="17sp"
+        android:textColor="@color/mypage_color"
         app:layout_constraintStart_toStartOf="@id/mypage_useract_inquire_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_useract_inquire_iv"
         app:layout_constraintBottom_toBottomOf="@id/mypage_useract_inquire_iv"/>
     <ImageView
         android:id="@+id/mypage_useract_inquire_go_iv"
-        android:layout_width="67dp"
+        android:layout_width="80dp"
         android:layout_height="25dp"
         android:layout_marginEnd="50sp"
-        android:src="@drawable/go_ask_btn"
+        android:src="@drawable/mypage_togo"
         app:layout_constraintEnd_toEndOf="@id/mypage_useract_inquire_iv"
         app:layout_constraintTop_toTopOf="@id/mypage_useract_inquire_iv"
         app:layout_constraintBottom_toBottomOf="@id/mypage_useract_inquire_iv"/>

@@ -15,7 +15,7 @@
         android:id="@+id/dictionaryFragment"
         android:enabled="true"
         android:title="@string/dictionary_title"
-        android:icon="@drawable/dictionary_icon"/>
+        android:icon="@drawable/dictionary_icon" />
     <item
         android:id="@+id/mypageFragment"
         android:enabled="true"

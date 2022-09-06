@@ -38,7 +38,7 @@
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:background="@color/white"
-        app:itemRippleColor="@color/white"
+        app:itemRippleColor="@color/black"
         app:labelVisibilityMode="unlabeled"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -93,12 +93,24 @@
         app:layout_constraintTop_toTopOf="@id/map_lasek_btn"/>
 
     <ImageView
-        android:id="@+id/map_list_btn"
+        android:id="@+id/map_list_selected_btn"
+        android:layout_width="144dp"
+        android:layout_height="44dp"
+        android:src="@drawable/map_list_selected_btn"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/map_list_default_btn"
         android:layout_width="173dp"
         android:layout_height="44dp"
         android:src="@drawable/map_list_default_btn"
         android:layout_marginBottom="10dp"
-        app:layout_constraintBottom_toTopOf="@id/main_bottom_navigation"
+        app:layout_constraintBottom_toTopOf="@+id/main_bottom_navigation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -107,11 +119,12 @@
         android:layout_width="match_parent"
         android:layout_height="500dp"
         android:layout_marginTop="10dp"
+        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/map_list_btn"
+        app:layout_constraintTop_toBottomOf="@id/map_list_selected_btn"
         tools:itemCount="10"
-        tools:listitem="@layout/item_lasek_review"
+        tools:listitem="@layout/item_map_list"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"/>
 

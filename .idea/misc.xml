@@ -107,16 +107,18 @@
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/drawable/border_nickname_checkbutton.xml" value="0.144" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/drawable/map_lasek_btn.xml" value="0.1605" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/drawable/map_list_btn.xml" value="0.1605" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/drawable/map_marker_color.xml" value="0.1" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/drawable/review_background_default.xml" value="0.1805" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/drawable/review_box.xml" value="0.1805" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/drawable/review_total_box.xml" value="0.1" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_find_id.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_find_id_result.xml" value="0.2526041666666667" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_find_pwd.xml" value="0.2526041666666667" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_login.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_main.xml" value="0.15625" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_signup.xml" value="0.1453125" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_login.xml" value="0.264" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_signup.xml" value="0.264" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/activity_splash.xml" value="0.25364583333333335" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary.xml" value="0.2" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary.xml" value="0.264" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation.xml" value="0.15625" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_lasek.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_laser.xml" value="0.15520833333333334" />
@@ -130,13 +132,13 @@
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_side_effect_smile.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_symptom.xml" value="0.15625" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_event.xml" value="0.15625" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_home.xml" value="0.11388888888888889" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_home_add_review.xml" value="0.2" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_home_add_review.xml" value="0.264" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_home_banner.xml" value="0.1125" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_map.xml" value="0.1" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_mypage.xml" value="0.136" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_lasek_review.xml" value="0.1" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_lasik_review.xml" value="0.1" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_map.xml" value="0.2" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_mypage.xml" value="0.4" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_lasek_review.xml" value="0.4" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_lasik_review.xml" value="0.4" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_map_list.xml" value="0.264" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_near_ophthalmology_review.xml" value="0.1" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_ophthalmology_review.xml" value="0.1" />
