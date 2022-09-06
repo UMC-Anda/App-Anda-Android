@@ -1,13 +1,7 @@
 package com.example.anda.ui.main
 
 import android.Manifest
-import android.content.Context
-import android.content.pm.PackageManager
 import android.content.pm.PackageManager.PERMISSION_GRANTED
-import android.location.Location
-import android.location.LocationRequest
-import android.os.Build
-import android.os.Looper
 import android.util.Log
 import android.view.View
 import android.widget.Toast
@@ -16,7 +10,6 @@ import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.example.anda.R
 import com.example.anda.databinding.ActivityMainBinding
-import com.example.anda.databinding.FragmentMapBinding
 import com.example.anda.ui.BaseActivity
 import com.example.anda.ui.main.dictionary.DictionaryFragment
 import com.example.anda.ui.main.home.HomeFragment
@@ -27,6 +20,58 @@ import com.google.android.gms.location.LocationServices
 
 
 class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+
+
+    //이미지 변환
+     private fun settingOnClick(){
+        //스마일라식
+        val smileImgResId = R.drawable.map_smile_default_btn
+        var smileResId = smileImgResId
+        binding.mapSmileBtn.setImageResource(smileImgResId)
+        binding.mapSmileBtn.setOnClickListener {
+            Log.d("이미지변경", "성공!!")
+            smileResId =
+                if (smileResId == R.drawable.map_smile_default_btn)
+                    R.drawable.map_smile_selected_btn
+                else
+                    R.drawable.map_smile_default_btn
+            binding.mapSmileBtn.setImageResource(smileResId)
+        }
+        //목록보기
+        val listImgResId = R.drawable.map_list_default_btn
+        var listResId = listImgResId
+        binding.mapListBtn.setImageResource(listImgResId)
+        binding.mapListBtn.setOnClickListener {
+            Log.d("이미지변경", "성공!!")
+            listResId =
+                if (listResId == R.drawable.map_list_default_btn)
+                    R.drawable.map_list_selected_btn
+                else
+                    R.drawable.map_list_default_btn
+            binding.mapListBtn.setImageResource(listResId)
+        }
+    }
+    private fun invisibleImg(){
+        binding.mapLasekBtn.visibility = View.GONE
+        binding.mapLasikBtn.visibility = View.GONE
+        binding.mapLensBtn.visibility = View.GONE
+        binding.mapSmileBtn.visibility = View.GONE
+        binding.mapOphthalmologyBtn.visibility = View.GONE
+        binding.mapListBtn.visibility = View.GONE
+    }
+    private fun visibleImg(){
+        binding.mapLasekBtn.visibility = View.VISIBLE
+        binding.mapLasikBtn.visibility = View.VISIBLE
+        binding.mapLensBtn.visibility = View.VISIBLE
+        binding.mapSmileBtn.visibility = View.VISIBLE
+        binding.mapOphthalmologyBtn.visibility = View.VISIBLE
+        binding.mapListBtn.visibility = View.VISIBLE
+    }
+
+
+
+
+
     //위치 권한
     val permissions = arrayOf(Manifest.permission.ACCESS_FINE_LOCATION,Manifest.permission.ACCESS_COARSE_LOCATION)
     val PERM_FLAG = 99
@@ -38,10 +83,11 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
 
     override fun initAfterBinding() {
         initBottomNavigation()
+        invisibleImg()
         if(!isPermitted()){
             ActivityCompat.requestPermissions(this,permissions,PERM_FLAG)//권한 요청
         }
-
+        settingOnClick()
     }
 
     override fun onBackPressed() {
@@ -61,18 +107,22 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
         binding.mainBottomNavigation.setOnItemSelectedListener { item->
             when(item.itemId){
                 R.id.homeFragment->{
+                    invisibleImg()
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,HomeFragment()).commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
                 R.id.mapFragment->{
+                    visibleImg()
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,MapFragment()).commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
                 R.id.dictionaryFragment->{
+                    invisibleImg()
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,DictionaryFragment()).commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
                 R.id.mypageFragment->{
+                    invisibleImg()
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,MypageFragment()).commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }

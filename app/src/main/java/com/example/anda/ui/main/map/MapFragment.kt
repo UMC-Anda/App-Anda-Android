@@ -11,11 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.anda.R
-import com.example.anda.databinding.FragmentDictionaryBinding
-import com.example.anda.databinding.FragmentMapBinding
 import com.example.anda.ui.main.MainActivity
-import com.example.anda.ui.main.dictionary.symptom.SymptomFragment
-import com.example.anda.ui.main.home.AddReviewFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
@@ -40,6 +36,7 @@ class MapFragment() : Fragment(),OnMapReadyCallback {
         mapView = rootView.findViewById(R.id.mapFragment) as MapView
         mapView.onCreate(savedInstanceState)
         mapView.getMapAsync(this)
+
         return rootView
     }
 
