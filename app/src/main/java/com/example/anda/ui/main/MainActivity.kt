@@ -6,17 +6,22 @@ import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.TranslateAnimation
+import android.widget.LinearLayout.HORIZONTAL
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.example.anda.R
 import com.example.anda.data.entities.MapList
 import com.example.anda.databinding.ActivityMainBinding
 import com.example.anda.ui.BaseActivity
 import com.example.anda.ui.main.dictionary.DictionaryFragment
 import com.example.anda.ui.main.home.HomeFragment
+import com.example.anda.ui.main.home.ReviewLasekRVAdapter
 import com.example.anda.ui.main.map.MapFragment
+import com.example.anda.ui.main.map.MapListRVAdapter
 import com.example.anda.ui.main.mypage.MypageFragment
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
@@ -26,7 +31,9 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
     private var listMapDatas = ArrayList<MapList>()
 
     override fun initAfterBinding() {
+
         initBottomNavigation()
+        applyRV()
         invisibleImg()
         if(!isPermitted()){
             ActivityCompat.requestPermissions(this,permissions,PERM_FLAG)//권한 요청
@@ -35,17 +42,20 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
     }
     private fun applyRV() {
         listMapDatas.apply {
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
-            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구1", "ab", 5f))
+            add(MapList("김병원", "서울특별시 영등포구2", "cd", 2f))
+            add(MapList("안과병원", "서울특별시 영등포구3", "ef", 2f))
+            add(MapList("과병원", "서울특별시 영등포구4", "gh", 2.5f))
+            add(MapList("안병원", "서울특별시 영등포구5", "ij", 4f))
+            add(MapList("안과원", "서울특별시 영등포구6", "jl", 1f))
+            add(MapList("김안과병원", "서울특별시 영등포구7", "mn", 3.5f))
+            add(MapList("김a과병원", "서울특별시 영등포구8", "op", 4.5f))
+            add(MapList("김안fa과병원", "서울특별시 영등포구9", "qr", 3f))
+            add(MapList("김안과hha병원", "서울특별시 영등포구10", "st", 3.5f))
         }
+        val mapListRVAdapter = MapListRVAdapter(listMapDatas)
+        binding.mapListItemRv.adapter = mapListRVAdapter
+        binding.mapListItemRv.layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
     }
 
     //이미지 변환
@@ -70,7 +80,6 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
              binding.mapListSelectedBtn.visibility = View.VISIBLE
              binding.mapListItemRv.visibility = View.VISIBLE
              binding.mapListDefaultBtn.visibility = View.GONE
-             applyRV()
          }
          //닫기
          binding.mapListSelectedBtn.setOnClickListener {

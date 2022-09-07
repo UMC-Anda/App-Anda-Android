@@ -178,7 +178,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
-                    tools:listitem="null"
+                    tools:listitem="@layout/item_near_ophthalmology_review"
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     android:orientation="horizontal"
                     app:layout_constraintTop_toBottomOf="@id/home_near_ophthalmology_review_exp2_tv"/>

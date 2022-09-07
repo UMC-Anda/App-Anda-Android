@@ -91,19 +91,16 @@
         android:layout_marginStart="10dp"
         app:layout_constraintStart_toEndOf="@id/map_lens_btn"
         app:layout_constraintTop_toTopOf="@id/map_lasek_btn"/>
-
     <ImageView
         android:id="@+id/map_list_selected_btn"
         android:layout_width="144dp"
         android:layout_height="44dp"
         android:src="@drawable/map_list_selected_btn"
-        android:layout_marginBottom="10dp"
         android:visibility="visible"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
     <ImageView
         android:id="@+id/map_list_default_btn"
         android:layout_width="173dp"
@@ -114,19 +111,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
+
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/map_list_item_rv"
         android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:layout_marginTop="10dp"
+        android:layout_height="293dp"
         android:visibility="visible"
+        android:foreground="@drawable/map_list_background"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/map_list_selected_btn"
-        tools:itemCount="10"
+        app:layout_constraintBottom_toTopOf="@id/main_bottom_navigation"
+        tools:itemCount="5"
         tools:listitem="@layout/item_map_list"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         android:orientation="vertical"/>
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
