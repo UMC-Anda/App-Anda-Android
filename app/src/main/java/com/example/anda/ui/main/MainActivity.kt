@@ -4,11 +4,14 @@ import android.Manifest
 import android.content.pm.PackageManager.PERMISSION_GRANTED
 import android.util.Log
 import android.view.View
+import android.view.animation.Animation
+import android.view.animation.TranslateAnimation
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import com.example.anda.R
+import com.example.anda.data.entities.MapList
 import com.example.anda.databinding.ActivityMainBinding
 import com.example.anda.ui.BaseActivity
 import com.example.anda.ui.main.dictionary.DictionaryFragment
@@ -20,7 +23,30 @@ import com.google.android.gms.location.LocationServices
 
 
 class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+    private var listMapDatas = ArrayList<MapList>()
 
+    override fun initAfterBinding() {
+        initBottomNavigation()
+        invisibleImg()
+        if(!isPermitted()){
+            ActivityCompat.requestPermissions(this,permissions,PERM_FLAG)//권한 요청
+        }
+        settingOnClick()
+    }
+    private fun applyRV() {
+        listMapDatas.apply {
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+            add(MapList("김안과병원", "서울특별시 영등포구", "", 5f))
+        }
+    }
 
     //이미지 변환
      private fun settingOnClick(){
@@ -38,18 +64,22 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
             binding.mapSmileBtn.setImageResource(smileResId)
         }
         //목록보기
-        val listImgResId = R.drawable.map_list_default_btn
-        var listResId = listImgResId
-        binding.mapListBtn.setImageResource(listImgResId)
-        binding.mapListBtn.setOnClickListener {
-            Log.d("이미지변경", "성공!!")
-            listResId =
-                if (listResId == R.drawable.map_list_default_btn)
-                    R.drawable.map_list_selected_btn
-                else
-                    R.drawable.map_list_default_btn
-            binding.mapListBtn.setImageResource(listResId)
-        }
+         // 열기
+         binding.mapListDefaultBtn.setOnClickListener {
+             Log.d("이미지변경", "성공!!")
+             binding.mapListSelectedBtn.visibility = View.VISIBLE
+             binding.mapListItemRv.visibility = View.VISIBLE
+             binding.mapListDefaultBtn.visibility = View.GONE
+             applyRV()
+         }
+         //닫기
+         binding.mapListSelectedBtn.setOnClickListener {
+             Log.d("이미지변경", "성공!!")
+             binding.mapListSelectedBtn.visibility = View.GONE
+             binding.mapListItemRv.visibility = View.GONE
+             binding.mapListDefaultBtn.visibility = View.VISIBLE
+         }
+
     }
     private fun invisibleImg(){
         binding.mapLasekBtn.visibility = View.GONE
@@ -57,7 +87,9 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
         binding.mapLensBtn.visibility = View.GONE
         binding.mapSmileBtn.visibility = View.GONE
         binding.mapOphthalmologyBtn.visibility = View.GONE
-        binding.mapListBtn.visibility = View.GONE
+        binding.mapListDefaultBtn.visibility = View.GONE
+        binding.mapListItemRv.visibility = View.GONE
+        binding.mapListSelectedBtn.visibility = View.GONE
     }
     private fun visibleImg(){
         binding.mapLasekBtn.visibility = View.VISIBLE
@@ -65,7 +97,7 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
         binding.mapLensBtn.visibility = View.VISIBLE
         binding.mapSmileBtn.visibility = View.VISIBLE
         binding.mapOphthalmologyBtn.visibility = View.VISIBLE
-        binding.mapListBtn.visibility = View.VISIBLE
+        binding.mapListDefaultBtn.visibility = View.VISIBLE
     }
 
 
@@ -81,14 +113,7 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
     private lateinit var navHostFragment: NavHostFragment
     var backKeyPressedTime : Long = 0
 
-    override fun initAfterBinding() {
-        initBottomNavigation()
-        invisibleImg()
-        if(!isPermitted()){
-            ActivityCompat.requestPermissions(this,permissions,PERM_FLAG)//권한 요청
-        }
-        settingOnClick()
-    }
+
 
     override fun onBackPressed() {
         // 뒤로가기 버튼 클릭

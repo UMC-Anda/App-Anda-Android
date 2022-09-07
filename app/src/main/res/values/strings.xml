@@ -33,7 +33,7 @@
     <string name="login_find_id">아이디 비밀번호 찾기</string>
 
     <!-- 회원가입 -->
-    <string name="signup">회원가입</string>
+    <string name="signup">가입하기</string>
     <string name="signup_info">가입을 통해 안다의 다양한 해택을 함께 누려보세요!</string>
     <string name="signup_id_hint">아이디(이메일)</string>
     <string name="signup_lastId_hint">anda.com</string>

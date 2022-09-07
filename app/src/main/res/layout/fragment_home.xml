@@ -30,7 +30,7 @@
                     app:selectedDotColor="@color/sub_color"
                     app:dotsCornerRadius="8dp"
                     app:dotsSpacing="5dp"
-                    app:dotsSize="15dp"
+                    app:dotsSize="12dp"
                     app:dotsWidthFactor="2"
                     app:progressMode="true"
                     tools:ignore="MissingConstraints"
