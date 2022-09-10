@@ -18,6 +18,22 @@
         />
 
 
+
+    <fragment
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:map="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/main_map_fragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:context=".ui.main.MainActivity"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_top_bar"
+        map:layout_constraintBottom_toBottomOf="@+id/main_bottom_navigation"/>
+
+
     <!-- ID must to be 'nav_host_fragment_container' -->
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/nav_host_fragment_container"
@@ -33,6 +49,8 @@
         app:layout_constraintBottom_toTopOf="@+id/main_bottom_navigation"/>
 
 
+
+
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/main_bottom_navigation"
         android:layout_width="match_parent"
@@ -45,6 +63,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/nav_host_fragment_container"
         app:menu="@menu/navi_menu" />
+
+    <ImageView
+        android:id="@+id/main_map_mylocation"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/main_map_mylcation"
+        android:layout_marginStart="25dp"
+        android:layout_marginBottom="25dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/main_bottom_navigation"/>
 
     <ImageView
         android:id="@+id/map_lasek_btn"

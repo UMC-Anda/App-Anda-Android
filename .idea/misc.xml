@@ -129,18 +129,21 @@
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_lasik.xml" value="0.11911231884057971" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_lens.xml" value="0.1" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_operation_smile.xml" value="0.15625" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_prevent_side_effect.xml" value="0.1125" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_recommend_ophthalmology.xml" value="0.15625" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_side_effect_common.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_side_effect_lasek.xml" value="0.1282051282051282" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_side_effect_lasik.xml" value="0.1282051282051282" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_side_effect_smile.xml" value="0.15520833333333334" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_symptom.xml" value="0.15625" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_symptom_farsighted.xml" value="0.1125" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_dictionary_symptom_nearsighted.xml" value="0.1125" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_event.xml" value="0.15625" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_home.xml" value="0.264" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_home.xml" value="0.13858695652173914" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_home_add_review.xml" value="0.264" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_home_banner.xml" value="0.1125" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_map.xml" value="0.2" />
-        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_mypage.xml" value="0.4" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_map.xml" value="0.18981481481481483" />
+        <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/fragment_mypage.xml" value="0.12335359675785208" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_lasek_review.xml" value="0.4" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_lasik_review.xml" value="0.4" />
         <entry key="..\:/Users/yacka/Desktop/app-ANDA-android/app/src/main/res/layout/item_map_list.xml" value="0.264" />

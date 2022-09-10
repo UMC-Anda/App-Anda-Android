@@ -4,13 +4,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#EFEFEF">
+    android:background="@color/whitegray">
 
-    <ImageView
-        android:id="@+id/mypage_background_iv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/whitegray"/>
+
 
     <ImageView
         android:id="@+id/mypage_userinfo_background_iv"

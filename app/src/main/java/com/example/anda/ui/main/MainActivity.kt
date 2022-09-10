@@ -1,37 +1,45 @@
 package com.example.anda.ui.main
 
 import android.Manifest
+import android.annotation.SuppressLint
 import android.content.pm.PackageManager.PERMISSION_GRANTED
+import android.graphics.drawable.BitmapDrawable
+import android.location.Location
+import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import android.view.View
-import android.view.animation.Animation
-import android.view.animation.TranslateAnimation
-import android.widget.LinearLayout.HORIZONTAL
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.anda.R
 import com.example.anda.data.entities.MapList
 import com.example.anda.databinding.ActivityMainBinding
 import com.example.anda.ui.BaseActivity
 import com.example.anda.ui.main.dictionary.DictionaryFragment
 import com.example.anda.ui.main.home.HomeFragment
-import com.example.anda.ui.main.home.ReviewLasekRVAdapter
 import com.example.anda.ui.main.map.MapFragment
 import com.example.anda.ui.main.map.MapListRVAdapter
 import com.example.anda.ui.main.mypage.MypageFragment
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
+import com.google.android.gms.location.*
+import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.*
 
 
-class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate) {
+class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::inflate),OnMapReadyCallback {
     private var listMapDatas = ArrayList<MapList>()
+    private lateinit var mMap:GoogleMap
+    private var myLocationMarker : Marker? = null
+
+    var moveToMe:Boolean = false
 
     override fun initAfterBinding() {
-
         initBottomNavigation()
         applyRV()
         invisibleImg()
@@ -60,6 +68,18 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
 
     //이미지 변환
      private fun settingOnClick(){
+        //내 위치로 이동
+        binding.mainMapMylocation.setOnClickListener{
+            moveToMe = true
+        }
+        //라식
+        binding.mapLasikBtn.setOnClickListener {
+            findLasik()
+        }
+        //라섹
+        binding.mapLasekBtn.setOnClickListener {
+            findLasek()
+        }
         //스마일라식
         val smileImgResId = R.drawable.map_smile_default_btn
         var smileResId = smileImgResId
@@ -72,6 +92,29 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
                 else
                     R.drawable.map_smile_default_btn
             binding.mapSmileBtn.setImageResource(smileResId)
+            findSmile()
+        }
+        //렌즈삽입술
+        binding.mapLensBtn.setOnClickListener {
+            Log.d("이미지변경", "성공!!")
+            smileResId =
+                if (smileResId == R.drawable.map_smile_default_btn)
+                    R.drawable.map_smile_selected_btn
+                else
+                    R.drawable.map_smile_default_btn
+            binding.mapSmileBtn.setImageResource(smileResId)
+            findLens()
+        }
+        //안과
+        binding.mapOphthalmologyBtn.setOnClickListener {
+            Log.d("이미지변경", "성공!!")
+            smileResId =
+                if (smileResId == R.drawable.map_smile_default_btn)
+                    R.drawable.map_smile_selected_btn
+                else
+                    R.drawable.map_smile_default_btn
+            binding.mapSmileBtn.setImageResource(smileResId)
+            findOphtha()
         }
         //목록보기
          // 열기
@@ -90,6 +133,27 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
          }
 
     }
+
+    private fun findLasik() {
+        TODO("Not yet implemented")
+    }
+
+    private fun findLasek() {
+        TODO("Not yet implemented")
+    }
+
+    private fun findSmile() {
+        TODO("Not yet implemented")
+    }
+
+    private fun findLens() {
+        TODO("Not yet implemented")
+    }
+
+    private fun findOphtha() {
+        TODO("Not yet implemented")
+    }
+
     private fun invisibleImg(){
         binding.mapLasekBtn.visibility = View.GONE
         binding.mapLasikBtn.visibility = View.GONE
@@ -99,6 +163,7 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
         binding.mapListDefaultBtn.visibility = View.GONE
         binding.mapListItemRv.visibility = View.GONE
         binding.mapListSelectedBtn.visibility = View.GONE
+        binding.mainMapMylocation.visibility = View.GONE
     }
     private fun visibleImg(){
         binding.mapLasekBtn.visibility = View.VISIBLE
@@ -107,6 +172,7 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
         binding.mapSmileBtn.visibility = View.VISIBLE
         binding.mapOphthalmologyBtn.visibility = View.VISIBLE
         binding.mapListDefaultBtn.visibility = View.VISIBLE
+        binding.mainMapMylocation.visibility = View.VISIBLE
     }
 
 
@@ -148,6 +214,7 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
                 R.id.mapFragment->{
                     visibleImg()
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,MapFragment()).commitAllowingStateLoss()
+                    mapOpen()
                     return@setOnItemSelectedListener true
                 }
                 R.id.dictionaryFragment->{
@@ -166,11 +233,98 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
     }
 
 
-
     //google map activity
-    fun getFusedLocation(): FusedLocationProviderClient {
-        val fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
-        return fusedLocationClient
+
+    private fun mapOpen() {
+        val mapFragment =  supportFragmentManager
+            .findFragmentById(R.id.main_map_fragment) as SupportMapFragment
+        mapFragment.getMapAsync(this)
+    }
+
+
+
+    override fun onMapReady(googleMap: GoogleMap) {
+        mMap = googleMap
+        val cameraOption = CameraPosition.Builder().target(LatLng(37.5666805,126.9784147)).zoom(10.0f).build()
+        val camera = CameraUpdateFactory.newCameraPosition(cameraOption)
+        mMap.moveCamera(camera)
+        moveToMe = true
+        fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
+        setUpdateLocationListener()
+    }
+
+    private fun setMyMarker(latitude: Double, longitude:Double) {
+        //마커 설정
+        myLocationMarker?.remove()
+        val location = LatLng(latitude, longitude)
+        var bitmapDrawable: BitmapDrawable =
+            getDrawable(R.drawable.main_map_mylocation_img) as BitmapDrawable
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            bitmapDrawable = getDrawable(R.drawable.main_map_mylocation_img) as BitmapDrawable
+        } else {
+            bitmapDrawable =
+                resources.getDrawable(R.drawable.main_map_mylocation_img) as BitmapDrawable
+        }
+        val discriptor = BitmapDescriptorFactory.fromBitmap(bitmapDrawable.bitmap)
+        val markerOption = MarkerOptions().position(location).icon(discriptor)
+        myLocationMarker = mMap.addMarker(markerOption)!!
+        Log.d("마커표시","성공!")
+        if(moveToMe) {
+            val cameraOption = CameraPosition.Builder().target(location).zoom(20.0f).build()
+            val camera = CameraUpdateFactory.newCameraPosition(cameraOption)
+            mMap.animateCamera(camera)
+            Log.d("카메라이동", "성공!")
+            moveToMe = false
+        }
+    }
+
+    private fun setOphthaMarker(latitude: Double, longitude:Double) {
+        //마커 설정
+        myLocationMarker?.remove()
+        val location = LatLng(latitude + 0.05, longitude + 0.05)
+        var bitmapDrawable: BitmapDrawable =
+            getDrawable(R.drawable.map_ophtha_location_icon) as BitmapDrawable
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            bitmapDrawable = getDrawable(R.drawable.map_ophtha_location_icon) as BitmapDrawable
+        } else {
+            bitmapDrawable =
+                resources.getDrawable(R.drawable.map_ophtha_location_icon) as BitmapDrawable
+        }
+        val discriptor = BitmapDescriptorFactory.fromBitmap(bitmapDrawable.bitmap)
+        val markerOption = MarkerOptions().position(location).title("안과 위치(예시)").icon(discriptor)
+        myLocationMarker = mMap.addMarker(markerOption)!!
+        Log.d("마커표시","성공!")
+    }
+
+
+    lateinit var fusedLocationClient: FusedLocationProviderClient
+    lateinit var locationCallback: LocationCallback
+
+    @SuppressLint("MissingPermission")
+    fun setUpdateLocationListener(){
+        val locationRequest = LocationRequest.create()
+        locationRequest.run {
+            priority = LocationRequest.PRIORITY_HIGH_ACCURACY
+            interval = 1000
+        }
+        locationCallback = object : LocationCallback() {
+            override fun onLocationResult(locationResult: LocationResult) {
+                locationResult?.let {
+                    for ((i, location) in it.locations.withIndex()) {
+                        Log.d("로케이션", "$i ${location.latitude}, ${location.longitude}")
+                        setLastLocation(location)
+                    }
+                }
+            }
+        }
+        //로케이션 요청 함수 호출(locationRequest, locationCallback)
+        fusedLocationClient.requestLocationUpdates(locationRequest,locationCallback, Looper.myLooper())
+    }
+
+    fun setLastLocation(location : Location){
+        val myLocation = LatLng(location.latitude, location.longitude)
+        setMyMarker(myLocation.latitude, myLocation.longitude)
+        setOphthaMarker(myLocation.latitude, myLocation.longitude)
     }
 
     fun isPermitted() : Boolean{
@@ -181,8 +335,6 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
         }
         return true
     }
-
-
     override fun onRequestPermissionsResult(
         requestCode: Int,
         permissions: Array<out String>,
@@ -205,10 +357,8 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
             }
         }
     }
-    fun setUpdateLocationLister(): com.google.android.gms.location.LocationRequest {
-        val locationRequest = com.google.android.gms.location.LocationRequest.create()
-        return locationRequest
-    }
+
+
 
     //Location Activity
 //    lateinit var bindingLocation : FragmentMapBinding
