@@ -60,7 +60,6 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
         if(!isPermitted()){
             ActivityCompat.requestPermissions(this,permissions,PERM_FLAG)//권한 요청
         }
-        settingOnClick()
     }
     private fun applyRV() {
         listMapDatas.apply {
@@ -207,7 +206,7 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
         binding.mapListSelectedBtn.visibility = View.GONE
         binding.mainMapMylocation.visibility = View.GONE
     }
-    private fun visibleImg(){
+    private fun visibleImg() {
         binding.mapLasekBtn.visibility = View.VISIBLE
         binding.mapLasikBtn.visibility = View.VISIBLE
         binding.mapLensBtn.visibility = View.VISIBLE
@@ -255,7 +254,6 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
                     return@setOnItemSelectedListener true
                 }
                 R.id.mapFragment->{
-                    visibleImg()
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,MapFragment()).commitAllowingStateLoss()
                     intervalTime = 1000
                     mapOpen()
@@ -291,12 +289,10 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
 
     override fun onMapReady(googleMap: GoogleMap) {
         mMap = googleMap
-        val cameraOption = CameraPosition.Builder().target(LatLng(37.5666805,126.9784147)).zoom(10.0f).build()
-        val camera = CameraUpdateFactory.newCameraPosition(cameraOption)
-        mMap.moveCamera(camera)
         moveToMe = true
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
         setUpdateLocationListener()
+        settingOnClick()
     }
 
     private fun setMyMarker(latitude: Double, longitude:Double) {
@@ -319,6 +315,7 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
             val cameraOption = CameraPosition.Builder().target(myLocation).zoom(20.0f).build()
             val camera = CameraUpdateFactory.newCameraPosition(cameraOption)
             mMap.animateCamera(camera)
+            visibleImg()
             Log.d("내위치이동", "성공!")
             moveToMe = false
         }
