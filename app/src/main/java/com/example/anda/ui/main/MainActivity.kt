@@ -36,6 +36,20 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
     private var listMapDatas = ArrayList<MapList>()
     private lateinit var mMap:GoogleMap
     private var myLocationMarker : Marker? = null
+    private var ophthaLocationMarkerData1 : Marker? = null
+    private var ophthaLocationMarkerData2 : Marker? = null
+    private var ophthaLocationMarkerData3 : Marker? = null
+    private var ophthaLocationMarkerData4 : Marker? = null
+    private var ophthaLocationMarkerData5 : Marker? = null
+    private var ophthaLocationMarkerData6 : Marker? = null
+    private var ophthaLocationMarkerData7 : Marker? = null
+    private var ophthaLocationMarkerData8 : Marker? = null
+    private var ophthaLocationMarkerData9 : Marker? = null
+    private var ophthaLocationMarkerData10 : Marker? = null
+    private var ophthaLocationDatas = ArrayList<LatLng>()
+    private var ophthaNameDatas = ArrayList<String>()
+    private var intervalTime: Int = 0
+    private lateinit var userLocation:LatLng
 
     var moveToMe:Boolean = false
 
@@ -74,47 +88,36 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
         }
         //라식
         binding.mapLasikBtn.setOnClickListener {
-            findLasik()
+
         }
         //라섹
         binding.mapLasekBtn.setOnClickListener {
-            findLasek()
+
         }
         //스마일라식
         val smileImgResId = R.drawable.map_smile_default_btn
         var smileResId = smileImgResId
         binding.mapSmileBtn.setImageResource(smileImgResId)
         binding.mapSmileBtn.setOnClickListener {
+            resetDatas()
             Log.d("이미지변경", "성공!!")
-            smileResId =
-                if (smileResId == R.drawable.map_smile_default_btn)
-                    R.drawable.map_smile_selected_btn
-                else
-                    R.drawable.map_smile_default_btn
-            binding.mapSmileBtn.setImageResource(smileResId)
-            findSmile()
+            if (smileResId == R.drawable.map_smile_default_btn) {
+                smileResId = R.drawable.map_smile_selected_btn
+                binding.mapSmileBtn.setImageResource(smileResId)
+                findSmile()
+            }
+            else {
+                smileResId = R.drawable.map_smile_default_btn
+                binding.mapSmileBtn.setImageResource(smileResId)
+            }
         }
         //렌즈삽입술
         binding.mapLensBtn.setOnClickListener {
-            Log.d("이미지변경", "성공!!")
-            smileResId =
-                if (smileResId == R.drawable.map_smile_default_btn)
-                    R.drawable.map_smile_selected_btn
-                else
-                    R.drawable.map_smile_default_btn
-            binding.mapSmileBtn.setImageResource(smileResId)
-            findLens()
+
         }
         //안과
         binding.mapOphthalmologyBtn.setOnClickListener {
-            Log.d("이미지변경", "성공!!")
-            smileResId =
-                if (smileResId == R.drawable.map_smile_default_btn)
-                    R.drawable.map_smile_selected_btn
-                else
-                    R.drawable.map_smile_default_btn
-            binding.mapSmileBtn.setImageResource(smileResId)
-            findOphtha()
+
         }
         //목록보기
          // 열기
@@ -143,7 +146,46 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
     }
 
     private fun findSmile() {
-        TODO("Not yet implemented")
+        ophthaLocationDatas.apply {
+            add(LatLng(userLocation.latitude + 0.0001, userLocation.longitude - 0.0001))
+            add(LatLng(userLocation.latitude - 0.0001, userLocation.longitude - 0.0001))
+            add(LatLng(userLocation.latitude + 0.0002, userLocation.longitude + 0.0001))
+            add(LatLng(userLocation.latitude - 0.0002, userLocation.longitude + 0.0003))
+            add(LatLng(userLocation.latitude + 0.0007, userLocation.longitude + 0.0002))
+            add(LatLng(userLocation.latitude - 0.0007, userLocation.longitude - 0.0003))
+            add(LatLng(userLocation.latitude + 0.0005, userLocation.longitude - 0.0001))
+            add(LatLng(userLocation.latitude - 0.0005, userLocation.longitude + 0.0005))
+            add(LatLng(userLocation.latitude + 0.0003, userLocation.longitude + 0.0002))
+            add(LatLng(userLocation.latitude - 0.0003, userLocation.longitude - 0.0002))
+        }
+        ophthaNameDatas.apply {
+            add("안과예시1")
+            add("안과예시2")
+            add("안과예시3")
+            add("안과예시4")
+            add("안과예시5")
+            add("안과예시6")
+            add("안과예시7")
+            add("안과예시8")
+            add("안과예시9")
+            add("안과예시10")
+        }
+        setOphthaMarker()
+    }
+
+    private fun resetDatas() {
+        ophthaLocationMarkerData1?.remove()
+        ophthaLocationMarkerData2?.remove()
+        ophthaLocationMarkerData3?.remove()
+        ophthaLocationMarkerData4?.remove()
+        ophthaLocationMarkerData5?.remove()
+        ophthaLocationMarkerData6?.remove()
+        ophthaLocationMarkerData7?.remove()
+        ophthaLocationMarkerData8?.remove()
+        ophthaLocationMarkerData9?.remove()
+        ophthaLocationMarkerData10?.remove()
+        ophthaLocationDatas.clear()
+        ophthaNameDatas.clear()
     }
 
     private fun findLens() {
@@ -208,22 +250,26 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
             when(item.itemId){
                 R.id.homeFragment->{
                     invisibleImg()
+                    intervalTime = 0
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,HomeFragment()).commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
                 R.id.mapFragment->{
                     visibleImg()
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,MapFragment()).commitAllowingStateLoss()
+                    intervalTime = 1000
                     mapOpen()
                     return@setOnItemSelectedListener true
                 }
                 R.id.dictionaryFragment->{
                     invisibleImg()
+                    intervalTime = 0
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,DictionaryFragment()).commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
                 R.id.mypageFragment->{
                     invisibleImg()
+                    intervalTime = 0
                     supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment_container,MypageFragment()).commitAllowingStateLoss()
                     return@setOnItemSelectedListener true
                 }
@@ -256,56 +302,67 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
     private fun setMyMarker(latitude: Double, longitude:Double) {
         //마커 설정
         myLocationMarker?.remove()
-        val location = LatLng(latitude, longitude)
-        var bitmapDrawable: BitmapDrawable =
+        val myLocation = LatLng(latitude, longitude)
+        var myBitmapDrawable: BitmapDrawable =
             getDrawable(R.drawable.main_map_mylocation_img) as BitmapDrawable
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            bitmapDrawable = getDrawable(R.drawable.main_map_mylocation_img) as BitmapDrawable
+            myBitmapDrawable = getDrawable(R.drawable.main_map_mylocation_img) as BitmapDrawable
         } else {
-            bitmapDrawable =
+            myBitmapDrawable =
                 resources.getDrawable(R.drawable.main_map_mylocation_img) as BitmapDrawable
         }
-        val discriptor = BitmapDescriptorFactory.fromBitmap(bitmapDrawable.bitmap)
-        val markerOption = MarkerOptions().position(location).icon(discriptor)
-        myLocationMarker = mMap.addMarker(markerOption)!!
-        Log.d("마커표시","성공!")
+        val myDiscriptor = BitmapDescriptorFactory.fromBitmap(myBitmapDrawable.bitmap)
+        val myMarkerOption = MarkerOptions().position(myLocation).icon(myDiscriptor)
+        myLocationMarker = mMap.addMarker(myMarkerOption)!!
+        Log.d("내위치표시","성공!")
         if(moveToMe) {
-            val cameraOption = CameraPosition.Builder().target(location).zoom(20.0f).build()
+            val cameraOption = CameraPosition.Builder().target(myLocation).zoom(20.0f).build()
             val camera = CameraUpdateFactory.newCameraPosition(cameraOption)
             mMap.animateCamera(camera)
-            Log.d("카메라이동", "성공!")
+            Log.d("내위치이동", "성공!")
             moveToMe = false
         }
     }
 
-    private fun setOphthaMarker(latitude: Double, longitude:Double) {
+    private fun setOphthaMarker() {
         //마커 설정
-        myLocationMarker?.remove()
-        val location = LatLng(latitude + 0.05, longitude + 0.05)
-        var bitmapDrawable: BitmapDrawable =
-            getDrawable(R.drawable.map_ophtha_location_icon) as BitmapDrawable
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-            bitmapDrawable = getDrawable(R.drawable.map_ophtha_location_icon) as BitmapDrawable
-        } else {
-            bitmapDrawable =
-                resources.getDrawable(R.drawable.map_ophtha_location_icon) as BitmapDrawable
-        }
-        val discriptor = BitmapDescriptorFactory.fromBitmap(bitmapDrawable.bitmap)
-        val markerOption = MarkerOptions().position(location).title("안과 위치(예시)").icon(discriptor)
-        myLocationMarker = mMap.addMarker(markerOption)!!
-        Log.d("마커표시","성공!")
+        for(i in 0..9){
+            val ophthaLocation = LatLng(ophthaLocationDatas[i].latitude, ophthaLocationDatas[i].longitude)
+            var ophthaBitmapDrawable: BitmapDrawable =
+                getDrawable(R.drawable.map_ophtha_location_icon) as BitmapDrawable
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                ophthaBitmapDrawable = getDrawable(R.drawable.map_ophtha_location_icon) as BitmapDrawable
+            } else {
+                ophthaBitmapDrawable =
+                    resources.getDrawable(R.drawable.map_ophtha_location_icon) as BitmapDrawable
+            }
+            val ophthaDiscriptor = BitmapDescriptorFactory.fromBitmap(ophthaBitmapDrawable.bitmap)
+            val ophthaMarkerOption = MarkerOptions().position(ophthaLocation).icon(ophthaDiscriptor).title(ophthaNameDatas[i])
+            when(i){
+                0-> ophthaLocationMarkerData1 = mMap.addMarker(ophthaMarkerOption)!!
+                1-> ophthaLocationMarkerData2 = mMap.addMarker(ophthaMarkerOption)!!
+                2-> ophthaLocationMarkerData3 = mMap.addMarker(ophthaMarkerOption)!!
+                3-> ophthaLocationMarkerData4 = mMap.addMarker(ophthaMarkerOption)!!
+                4-> ophthaLocationMarkerData5 = mMap.addMarker(ophthaMarkerOption)!!
+                5-> ophthaLocationMarkerData6 = mMap.addMarker(ophthaMarkerOption)!!
+                6-> ophthaLocationMarkerData7 = mMap.addMarker(ophthaMarkerOption)!!
+                7-> ophthaLocationMarkerData8 = mMap.addMarker(ophthaMarkerOption)!!
+                8-> ophthaLocationMarkerData9 = mMap.addMarker(ophthaMarkerOption)!!
+                else-> ophthaLocationMarkerData10 = mMap.addMarker(ophthaMarkerOption)!!
+            }
+}
+        Log.d("병원표시","성공!")
     }
 
 
     lateinit var fusedLocationClient: FusedLocationProviderClient
     lateinit var locationCallback: LocationCallback
-
     @SuppressLint("MissingPermission")
     fun setUpdateLocationListener(){
         val locationRequest = LocationRequest.create()
         locationRequest.run {
             priority = LocationRequest.PRIORITY_HIGH_ACCURACY
-            interval = 1000
+            interval = intervalTime.toLong()
         }
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
@@ -323,8 +380,8 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
 
     fun setLastLocation(location : Location){
         val myLocation = LatLng(location.latitude, location.longitude)
+        userLocation = myLocation
         setMyMarker(myLocation.latitude, myLocation.longitude)
-        setOphthaMarker(myLocation.latitude, myLocation.longitude)
     }
 
     fun isPermitted() : Boolean{
