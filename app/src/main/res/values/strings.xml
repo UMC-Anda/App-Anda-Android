@@ -53,7 +53,7 @@
     <string name="find_id_put_email_hint">이메일을 입력해주세요.</string>
 
     <string name="dictionary_title">안과백과</string>
-    <string name="dictionary_info">안과계 백과사전, ~~\n이런식으로 설명쓰면 좋을거 같아요</string>
+    <string name="dictionary_info">눈에 대한 A to Z\n안과정보 부터, 교정술 예방 방법까지\n안다만의 안과백과로 확인해보세요</string>
     <string name="dictionary_symptom">증상\n카테고리</string>
     <string name="dictionary_operation">수술\n지식</string>
     <string name="dictionary_recommend_ophthalmology">안과\n추천</string>
@@ -61,13 +61,6 @@
 
 
 
-    <!--    증상 카테고리-->
-    <string name="dictionary_symptom_title">about 眼</string>
 
-    <!--    수술 추천-->
-    <string name="dictionary_operation_title">about 교정술</string>
-
-    <!--    안과추천-->
-    <string name="dictionary_recommend_ophthalmology_title">부작용 예방 방법</string>
 
 </resources>

@@ -41,6 +41,12 @@
         <activity
             android:name=".ui.siginup.SignupActivity"
             android:exported="true"/>
+        <activity
+            android:name=".ui.find.id.FindIdActivity"
+            android:exported="true"/>
+        <activity
+            android:name=".ui.find.pwd.FindpwdActivity"
+            android:exported="true"/>
 
 
         <meta-data android:name="com.kakao.sdk.AppKey" android:value="e9a0d806e3104c45fa60c5b974332f24"/>

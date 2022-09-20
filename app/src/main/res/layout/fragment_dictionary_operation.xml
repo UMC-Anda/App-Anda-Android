@@ -7,24 +7,15 @@
     android:layout_height="match_parent"
     android:background="@color/white">
 
-    <TextView
-        android:id="@+id/dictionary_operation_tv"
+    <ImageView
+        android:id="@+id/dictionary_operation_title_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50sp"
-        android:layout_marginStart="30sp"
-        android:text="@string/dictionary_operation_title"
-        android:textColor="@color/black"
-        android:textSize="25sp"
+        android:src="@drawable/dictionary_operation_title_img"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_eyes_underbar"
-        app:layout_constraintStart_toStartOf="@id/dictionary_operation_tv"
-        app:layout_constraintEnd_toEndOf="@id/dictionary_operation_tv"
-        app:layout_constraintBottom_toBottomOf="@id/dictionary_operation_tv"/>
 
     <ImageView
         android:id="@+id/dictionary_operation_laser_category_iv"
@@ -32,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:src="@drawable/dictionary_category_background"
-        app:layout_constraintTop_toBottomOf="@+id/dictionary_operation_tv"
+        app:layout_constraintTop_toBottomOf="@+id/dictionary_operation_title_iv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
     <TextView

@@ -31,7 +31,6 @@ class LoginActivity: BaseActivity<ActivityLoginBinding>(ActivityLoginBinding::in
 
             binding.loginSignUpTv -> startNextActivity(SignupActivity::class.java)
             binding.loginFindIdTv -> startNextActivity(FindIdActivity::class.java)
-            binding.loginSignUpTv -> startNextActivity(LoginActivity::class.java)
             binding.loginSignInBtn -> login()
         }
     }

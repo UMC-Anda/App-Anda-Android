@@ -8,24 +8,15 @@
     android:background="@color/white">
 
 
-<TextView
-        android:id="@+id/dictionary_side_effect_tv"
+    <ImageView
+        android:id="@+id/dictionary_side_effect_title_iv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="50sp"
-        android:layout_marginStart="30sp"
-        android:text="@string/dictionary_recommend_ophthalmology_title"
-        android:textColor="@color/black"
-        android:textSize="25sp"
+        android:src="@drawable/dictionary_side_effect_title_img"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dictionary_side_effect_underbar"
-        app:layout_constraintBottom_toBottomOf="@+id/dictionary_side_effect_tv"
-        app:layout_constraintStart_toStartOf="@+id/dictionary_side_effect_tv"
-        app:layout_constraintEnd_toEndOf="@+id/dictionary_side_effect_tv"/>
 
     <ImageView
         android:id="@+id/dictionary_side_effect_common_category_iv"
@@ -33,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="40dp"
         android:src="@drawable/dictionary_category_background"
-        app:layout_constraintTop_toBottomOf="@+id/dictionary_side_effect_tv"
+        app:layout_constraintTop_toBottomOf="@+id/dictionary_side_effect_title_iv"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
     <TextView

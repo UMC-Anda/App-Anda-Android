@@ -83,6 +83,7 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
      private fun settingOnClick(){
         //내 위치로 이동
         binding.mainMapMylocation.setOnClickListener{
+            Log.d("내위치클릭","클릭!")
             moveToMe = true
         }
         //라식
@@ -315,8 +316,8 @@ class MainActivity: BaseActivity<ActivityMainBinding>(ActivityMainBinding::infla
             val cameraOption = CameraPosition.Builder().target(myLocation).zoom(20.0f).build()
             val camera = CameraUpdateFactory.newCameraPosition(cameraOption)
             mMap.animateCamera(camera)
-            visibleImg()
             Log.d("내위치이동", "성공!")
+            visibleImg()
             moveToMe = false
         }
     }

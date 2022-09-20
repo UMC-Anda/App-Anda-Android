@@ -5,6 +5,39 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@color/white">
 
+    <ImageView
+        android:id="@+id/find_id_back_iv"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@color/black"
+        android:layout_marginTop="30dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        />
+
+    <ImageView
+        android:id="@+id/find_id_show_id_iv"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        android:src="@color/gray"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+    <EditText
+        android:id="@+id/find_id_show_id_et"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="아이디는 yackak@naver.com 입니다"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
     <EditText
         android:id="@+id/find_id_put_nickName_et"
         android:layout_width="0dp"
@@ -62,7 +95,7 @@
         app:layout_constraintTop_toBottomOf="@+id/find_id_put_nickName_error_tv" />
 
     <TextView
-        android:id="@+id/login_find_pwd_tv"
+        android:id="@+id/find_id_find_pwd_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"

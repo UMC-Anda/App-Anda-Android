@@ -1,17 +1,20 @@
 package com.example.anda.ui.find.id
 
+import android.os.Handler
+import android.os.Looper
 import android.view.View
 import com.example.anda.databinding.ActivityFindIdBinding
 import com.example.anda.ui.BaseActivity
 import com.example.anda.ui.find.id.model.FindIdResponse
 import com.example.anda.ui.find.pwd.FindpwdActivity
+import com.example.anda.ui.login.LoginActivity
 import com.example.anda.ui.siginup.SignupActivity
 
-class FindIdActivity:BaseActivity<ActivityFindIdBinding>(ActivityFindIdBinding::inflate),
-    FindIdView, View.OnClickListener{
+class FindIdActivity:BaseActivity<ActivityFindIdBinding>(ActivityFindIdBinding::inflate), View.OnClickListener{
     override fun initAfterBinding() {
         setContentView(binding.root)
-        binding.loginFindPwdTv.setOnClickListener(this)
+        binding.findIdFindPwdTv.setOnClickListener(this)
+        binding.findIdBackIv.setOnClickListener(this)
         binding.findIdFindIdBtn.setOnClickListener(this)
     }
 
@@ -19,21 +22,17 @@ class FindIdActivity:BaseActivity<ActivityFindIdBinding>(ActivityFindIdBinding::
         if (v == null) return
 
         when (v) {
-            binding.loginFindPwdTv -> startNextActivity(FindpwdActivity::class.java)
-            binding.loginFindPwdTv -> startNextActivity(FindIdActivity::class.java)
+            binding.findIdFindPwdTv -> startNextActivity(FindpwdActivity::class.java)
+            binding.findIdBackIv -> startNextActivity(LoginActivity::class.java)
+            binding.findIdFindIdBtn -> showId()
         }
     }
-
-    override fun onFindIdLoading() {
-        TODO("Not yet implemented")
+    private fun showId() {
+        binding.findIdShowIdIv.visibility = View.VISIBLE
+        binding.findIdShowIdEt.visibility = View.VISIBLE
+        Handler(Looper.getMainLooper()).postDelayed({
+            binding.findIdShowIdIv.visibility = View.GONE
+            binding.findIdShowIdEt.visibility = View.GONE
+        }, 3000)
     }
-
-    override fun onFindIdSuccess(response: FindIdResponse) {
-        TODO("Not yet implemented")
-    }
-
-    override fun onFindIdFailure(code: Int, message: String) {
-        TODO("Not yet implemented")
-    }
-
 }

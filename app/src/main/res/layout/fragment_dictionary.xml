@@ -55,32 +55,36 @@
 
     <ImageView
         android:id="@+id/dictionary_symptom_iv"
-        android:layout_width="144dp"
-        android:layout_height="171dp"
-        android:src="@drawable/about_eyes"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/about_symptom"
         android:scaleType="centerInside"
-        android:layout_marginTop="50sp"
-        app:layout_constraintEnd_toStartOf="@id/dictionary_standard_tv"
+        android:layout_marginTop="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/dictionary_dictionary_info_tv"/>
 
     <ImageView
         android:id="@+id/dictionary_operation_iv"
-        android:layout_width="144dp"
-        android:layout_height="171dp"
-        android:src="@drawable/about_treatment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/about_operation_img"
         android:scaleType="centerInside"
-        android:layout_marginTop="50sp"
-        app:layout_constraintStart_toEndOf="@id/dictionary_standard_tv"
-        app:layout_constraintTop_toBottomOf="@id/dictionary_dictionary_info_tv"/>
+        android:layout_marginTop="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_iv"/>
 
     <ImageView
         android:id="@+id/dictionary_prevent_side_effect_iv"
-        android:layout_width="144dp"
-        android:layout_height="171dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:scaleType="centerInside"
-        android:src="@drawable/about_side_effect"
-        app:layout_constraintStart_toStartOf="@id/dictionary_symptom_iv"
-        app:layout_constraintTop_toBottomOf="@id/dictionary_symptom_iv" />
+        android:src="@drawable/about_side_effect_img"
+        android:layout_marginTop="15sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/dictionary_operation_iv" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
